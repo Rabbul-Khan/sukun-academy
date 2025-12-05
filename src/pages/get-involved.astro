@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.vue';
+import Button from '../components/Button.vue';
+---
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400&display=swap');
+
+  h1, h2, h3 {
+    font-family: 'EB Garamond', serif;
+  }
+
+  p, li {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
+
+<Layout 
+  title="Get Involved - Sukun Regenerative Culture"
+  description="Join us in cultivating a regenerative future through volunteering, partnerships, and support."
+>
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="mb-6">Get Involved</h1>
+        
+        <p class="text-lg mb-8 leading-relaxed">
+          We welcome people who want to live, learn, and regenerate with sincerity and purpose.
+          These projects are growing — and your support helps bring them to life.
+        </p>
+
+        <Card client:load className="mb-8">
+          <h3 class="mb-4">Ways to connect</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-leaf text-xl">📱</span>
+              <span>Follow our updates</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-leaf text-xl">🙋</span>
+              <span>Volunteer / work-study</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-leaf text-xl">🤝</span>
+              <span>Partner with us</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-leaf text-xl">💚</span>
+              <span>Support land and project development</span>
+            </li>
+          </ul>
+        </Card>
+
+        <div class="grid sm:grid-cols-2 gap-6 mb-12">
+          <Card client:load>
+            <h3 class="mb-3">🙋 Volunteer</h3>
+            <p class="text-charcoal/80 mb-4">
+              Join us on the ground to learn, contribute, and be part of the regenerative movement.
+            </p>
+            <Button href="/contact" size="sm" client:load>
+              Volunteer Inquiry
+            </Button>
+          </Card>
+
+          <Card client:load>
+            <h3 class="mb-3">💚 Donate / Waqf</h3>
+            <p class="text-charcoal/80 mb-4">
+              Support land acquisition, infrastructure, and programs through charitable giving.
+            </p>
+            <Button href="/contact" size="sm" client:load>
+              Support Us
+            </Button>
+          </Card>
+
+          <Card client:load>
+            <h3 class="mb-3">🤝 Partner With Us</h3>
+            <p class="text-charcoal/80 mb-4">
+              Collaborate on training, research, or community development initiatives.
+            </p>
+            <Button href="/contact" size="sm" client:load>
+              Partnership Inquiry
+            </Button>
+          </Card>
+
+          <Card client:load>
+            <h3 class="mb-3">📧 Join Updates</h3>
+            <p class="text-charcoal/80 mb-4">
+              Stay informed about our progress, programs, and opportunities.
+            </p>
+            <Button href="/contact" size="sm" client:load>
+              Subscribe
+            </Button>
+          </Card>
+        </div>
+
+        <div class="text-center">
+          <p class="text-lg mb-4">Ready to take the next step?</p>
+          <Button href="/contact" variant="secondary" client:load>
+            Contact Us Today
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

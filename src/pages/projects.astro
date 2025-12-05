@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.vue';
+import Badge from '../components/Badge.vue';
+import Button from '../components/Button.vue';
+---
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400&display=swap');
+
+  h1, h2, h3 {
+    font-family: 'EB Garamond', serif;
+  }
+
+  p {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
+
+<Layout 
+  title="Our Projects - Sukun Regenerative Culture"
+  description="Three interconnected initiatives bringing ecological and cultural regeneration into daily life in Sylhet, Bangladesh."
+>
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h1 class="mb-6">Our Projects</h1>
+        <p class="text-lg text-charcoal/80 leading-relaxed">
+          Three interconnected initiatives are being developed to bring ecological and cultural regeneration into daily life.
+          Two are still in visioning and land-securing phases, and one has just begun implementation.
+          Follow our journey as these seeds grow into living realities.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <Card client:load>
+          <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
+            <img 
+              src="/images/sukun academy bangladesh.jpeg" 
+              alt="Sukun Academy Bangladesh" 
+              class="w-full h-56 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <Badge variant="info" client:load>Future Project</Badge>
+          <h2 class="mt-4 mb-3 text-2xl">Sukun Academy — Bangladesh</h2>
+          <p class="text-charcoal/80 mb-6">
+            Planned regenerative learning & training centre in Sylhet.
+          </p>
+          <Button href="/projects/sukun-academy" client:load>
+            Open Project
+          </Button>
+        </Card>
+
+        <Card client:load>
+          <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
+            <img 
+              src="/images/al fajr eco village.jpeg" 
+              alt="Al Fajr Ecovillage" 
+              class="w-full h-56 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <Badge variant="info" client:load>Future Project</Badge>
+          <h2 class="mt-4 mb-3 text-2xl">Al Fajr Ecovillage Jamāʿah</h2>
+          <p class="text-charcoal/80 mb-6">
+            Planned ecovillage in Kulaura, Sylhet.
+          </p>
+          <Button href="/projects/al-fajr-ecovillage" client:load>
+            Open Project
+          </Button>
+        </Card>
+
+        <Card client:load>
+          <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
+            <img 
+              src="/images/Darul Hayah Regenerative Farm.jpeg" 
+              alt="Darul Hayah Regenerative Farm" 
+              class="w-full h-56 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <Badge variant="success" client:load>Implementation Started</Badge>
+          <h2 class="mt-4 mb-3 text-2xl">Darul Hayah Regenerative Farm</h2>
+          <p class="text-charcoal/80 mb-6">
+            Early-stage regenerative farm & learning sanctuary.
+          </p>
+          <Button href="/projects/darul-hayah-farm" client:load>
+            Open Project
+          </Button>
+        </Card>
+      </div>
+    </div>
+  </section>
+</Layout>

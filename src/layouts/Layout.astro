@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'A faith- and culture-rooted movement for ecological and cultural regeneration in Sylhet, Bangladesh.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#0F3D2E" />
+    
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header client:load />
+    
+    <main class="pt-16 md:pt-20 min-h-screen">
+      <slot />
+    </main>
+    
+    <Footer />
+  </body>
+</html>

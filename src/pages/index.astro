@@ -1,16 +1,279 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.vue';
+import Card from '../components/Card.vue';
+import Badge from '../components/Badge.vue';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400&display=swap');
+
+  .hero-title {
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+  }
+
+  .hero-tagline {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+</style>
+
+<Layout title="Sukun Regenerative Culture - Where Peace Nurtures Life">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center overflow-hidden -mt-16 md:-mt-20 pt-16 md:pt-20">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/images/farm.png" 
+        alt="Sukun Regenerative Culture - Sylhet Farm" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/65 to-leaf/55"></div>
+      <div class="absolute inset-0 backdrop-blur-[2px]"></div>
+    </div>
+    
+    <div class="container-custom relative z-10 py-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="hero-title mb-4 animate-fade-in text-white drop-shadow-2xl text-4xl md:text-5xl lg:text-6xl leading-tight">
+         Sukun Regenerative Culture
+        </h1>
+        <h2 class="hero-tagline mb-6 animate-fade-in text-white drop-shadow-2xl text-3xl md:text-4xl lg:text-4xl leading-tight">
+          Where Peace Nurtures Life
+        </h2>
+        
+        <p class="hero-description text-base md:text-lg mb-10 text-white/90 drop-shadow-md leading-relaxed tracking-wide  mx-auto">
+          A faith-rooted movement for ecological and cultural regeneration in Sylhet. We cultivate inner peace (sukūn) and outward renewal (tajdīd) through education, farming, and stewardship.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/projects" class="inline-block bg-white text-forest px-7 py-3 rounded-md font-medium text-sm hover:bg-mint-light transition-all shadow-lg hover:shadow-xl">
+            Discover more
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecological + Cultural Themes -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-center mb-12">Ecological + Cultural Themes</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <Card client:load>
+          <div class="text-4xl mb-4">🌱</div>
+          <h3 class="mb-3">Ecological Regeneration</h3>
+          <p class="text-charcoal/80">
+            Through <strong>regenerative farming</strong>, we heal soil, water, and biodiversity
+            using permaculture and proper land care.
+          </p>
+        </Card>
+
+        <Card client:load>
+          <div class="text-4xl mb-4">📚</div>
+          <h3 class="mb-3">Cultural Renewal</h3>
+          <p class="text-charcoal/80">
+            Through <strong>living education</strong>, we renew traditional wisdom and
+            faith- and culture-rooted values for resilient, conscious communities.
+          </p>
+        </Card>
+
+        <Card client:load>
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="mb-3">Community Impact</h3>
+          <p class="text-charcoal/80">
+            Through <strong>community stewardship</strong>, we build ethical livelihoods,
+            cooperation, and long-term social–ecological wellbeing.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Projects -->
+  <section class="section-padding bg-gradient-to-br from-mint/5 to-sand">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="mb-4">Our Projects — Emerging Initiatives</h2>
+        <p class="text-charcoal/80 text-lg">
+          Three interconnected initiatives are being developed to bring regeneration into daily life.
+          Two are in visioning and land-securing phases, and one has just begun implementation.
+          Follow our journey as these seeds grow into living realities.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
+        <Card client:load>
+          <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
+            <img 
+              src="/images/sukun academy bangladesh.jpeg" 
+              alt="Sukun Academy Bangladesh" 
+              class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <Badge variant="info" client:load>Future Project</Badge>
+          <h3 class="mt-4 mb-2">Sukun Academy — Bangladesh</h3>
+          <p class="text-sm text-charcoal/70 mb-3">
+            Status: Concept & land phase
+          </p>
+          <p class="text-charcoal/80 mb-4">
+            Planned regenerative learning & training centre in Sylhet.
+          </p>
+          <Button href="/projects/sukun-academy" size="sm" client:load>
+            Learn More
+          </Button>
+        </Card>
+
+        <Card client:load>
+          <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
+            <img 
+              src="/images/al fajr eco village.jpeg" 
+              alt="Al Fajr Ecovillage" 
+              class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <Badge variant="info" client:load>Future Project</Badge>
+          <h3 class="mt-4 mb-2">Al Fajr Ecovillage Jamāʿah</h3>
+          <p class="text-sm text-charcoal/70 mb-3">
+            Status: Idea phase
+          </p>
+          <p class="text-charcoal/80 mb-4">
+            Planned ecovillage demonstrating faith- and culture-rooted regenerative living.
+          </p>
+          <Button href="/projects/al-fajr-ecovillage" size="sm" client:load>
+            Learn More
+          </Button>
+        </Card>
+
+        <Card client:load>
+          <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
+            <img 
+              src="/images/Darul Hayah Regenerative Farm.jpeg" 
+              alt="Darul Hayah Regenerative Farm" 
+              class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <Badge variant="success" client:load>Implementation Started</Badge>
+          <h3 class="mt-4 mb-2">Darul Hayah Regenerative Farm</h3>
+          <p class="text-sm text-charcoal/70 mb-3">
+            Status: Early implementation
+          </p>
+          <p class="text-charcoal/80 mb-4">
+            Early-stage regenerative farm & learning sanctuary.
+          </p>
+          <Button href="/projects/darul-hayah-farm" size="sm" client:load>
+            Learn More
+          </Button>
+        </Card>
+      </div>
+
+      <div class="text-center">
+        <Button href="/projects" variant="secondary" client:load>
+          View All Projects
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Barakah Circular Economy -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="mb-6">The Barakah Circular Economy</h2>
+        
+        <p class="text-lg text-charcoal/80 mb-6 leading-relaxed">
+          Sukun and Al Fajr are envisioned to operate under one
+          <strong>Community Land Trust (Waqf — sacred commons)</strong>
+          and a regenerative livelihood model that keeps resources circulating ethically within the community.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <Card client:load>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🕌</span>
+              <div>
+                <h4 class="font-semibold text-forest mb-1">Waqf — Sacred Commons</h4>
+                <p class="text-sm text-charcoal/80">Stewardship of land and core assets</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card client:load>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">⚖️</span>
+              <div>
+                <h4 class="font-semibold text-forest mb-1">Fair Exchange</h4>
+                <p class="text-sm text-charcoal/80">Rooted in contribution</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card client:load>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🗣️</span>
+              <div>
+                <h4 class="font-semibold text-forest mb-1">Shūrā Governance</h4>
+                <p class="text-sm text-charcoal/80">Consultative ecological leadership</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card client:load>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">♻️</span>
+              <div>
+                <h4 class="font-semibold text-forest mb-1">Regenerative Reinvestment</h4>
+                <p class="text-sm text-charcoal/80">Into soil, people, and learning</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <div class="flex flex-wrap gap-3 justify-center">
+          <Button href="/get-involved" client:load>
+            Support the Waqf
+          </Button>
+          <Button href="/get-involved" variant="outline" client:load>
+            Become a Contributor
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-forest to-forest-dark text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="mb-6 text-white">Ready to Make a Difference?</h2>
+        
+        <p class="text-lg text-white/90 mb-8 leading-relaxed">
+          We welcome people who want to live, learn, and regenerate with sincerity and purpose.
+          These projects are growing — and your support helps bring them to life.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-3">
+          <Button href="/get-involved" client:load>
+            Volunteer
+          </Button>
+          <Button href="/get-involved" client:load>
+            Donate / Waqf
+          </Button>
+          <Button href="/get-involved" variant="outline" client:load>
+            <span class="text-white hover:text-forest">Partner With Us</span>
+          </Button>
+          <Button href="/get-involved" variant="outline" client:load>
+            <span class="text-white hover:text-forest">Join Updates</span>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

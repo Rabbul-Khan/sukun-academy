@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.vue';
+import Button from '../components/Button.vue';
+---
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400&display=swap');
+
+  h1, h2, h3, h4 {
+    font-family: 'EB Garamond', serif;
+  }
+
+  p {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
+
+<Layout 
+  title="Contact - Sukun Regenerative Culture"
+  description="Get in touch with Sukun Regenerative Culture. We welcome collaborations, inquiries, and passionate individuals."
+>
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="mb-6 text-center">Get in Touch</h1>
+        
+        <p class="text-lg mb-12 text-center leading-relaxed">
+          Join us in cultivating a regenerative future. We welcome collaborations, inquiries,
+          and passionate individuals.
+        </p>
+
+        <Card client:load className="max-w-2xl mx-auto">
+          <div class="text-center mb-6">
+            <div class="text-4xl mb-4">👤</div>
+            <h2 class="mb-2">Md. Hamidur Rahman</h2>
+            <p class="text-charcoal/70 font-medium">Initiating Steward</p>
+          </div>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-3 p-3 bg-sand rounded-lg">
+              <span class="text-2xl">📧</span>
+              <div>
+                <p class="text-sm text-charcoal/70 mb-1">Email</p>
+                <a href="mailto:heartssee2021@gmail.com" class="text-leaf hover:text-leaf-dark font-medium">
+                  heartssee2021@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 bg-sand rounded-lg">
+              <span class="text-2xl">💬</span>
+              <div>
+                <p class="text-sm text-charcoal/70 mb-1">WhatsApp</p>
+                <a href="https://wa.me/8801766023151" class="text-leaf hover:text-leaf-dark font-medium" target="_blank" rel="noopener">
+                  +880 1766 023 151
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 bg-sand rounded-lg">
+              <span class="text-2xl">📍</span>
+              <div>
+                <p class="text-sm text-charcoal/70 mb-1">Location</p>
+                <p class="font-medium text-forest">Sylhet Region, Bangladesh</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3 justify-center">
+            <Button href="https://wa.me/8801766023151" client:load>
+              Message on WhatsApp
+            </Button>
+            <Button href="mailto:heartssee2021@gmail.com" variant="outline" client:load>
+              Email Us
+            </Button>
+          </div>
+        </Card>
+
+        <!-- Additional Info -->
+        <div class="mt-12 text-center">
+          <p class="text-charcoal/70 mb-4">
+            Whether you're interested in volunteering, partnering, supporting, or simply learning more,
+            we'd love to hear from you.
+          </p>
+          <p class="text-sm text-charcoal/60">
+            Response time: We typically respond within 1-2 business days.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

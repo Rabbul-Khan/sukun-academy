@@ -1,0 +1,231 @@
+1) ROUTES / PAGES (Bolt Navigation)
+Main Nav
+•	/ Home
+•	/about About
+•	/projects Projects (hub)
+•	/get-involved Get Involved
+•	/contact Contact
+Projects Sub Pages
+•	/projects/sukun-academy
+•	/projects/al-fajr-ecovillage
+•	/projects/darul-hayah-farm
+In Bolt, create pages with these slugs, then link buttons accordingly.
+________________________________________
+2) GREEN THEME (Palette + How to Use)
+Primary Palette (Nature-rich, calm)
+•	Forest Green (Primary): #0F3D2E
+•	Leaf Green (Accent): #2E7D32
+•	Fresh Mint (Soft Accent): #A8D5BA
+•	Earth Sand (Background tint): #F4F7F2
+•	Charcoal (Text): #1C1C1C
+•	Warm White (Cards): #FFFFFF
+Usage Rules
+•	Page background: Earth Sand #F4F7F2
+•	Headings / strong text: Forest Green #0F3D2E
+•	Buttons (primary): Leaf Green #2E7D32 with white text
+•	Buttons (hover): Forest Green #0F3D2E
+•	Cards: White background, soft shadow, thin Mint border
+•	Icons / highlights: Leaf Green
+Quick Bolt Styling Notes
+•	Set global primary color to Leaf Green.
+•	Use Forest Green for headings manually where Bolt allows.
+•	Add soft rounded corners to cards (12–16px).
+•	Keep plenty of vertical spacing (comfortable, breathable).
+________________________________________
+3) PAGE CONTENT — BOLT READY
+PAGE: / HOME
+Section: home-top
+Sukun Regenerative Culture
+Where Peace Nurtures Life
+A faith- and culture-rooted movement for ecological and cultural regeneration in Sylhet, Bangladesh.
+We cultivate inner peace (sukūn) and outward renewal (tajdīd) through living education, regenerative farming, and community stewardship — restoring the bond between soul, soil, and society.
+Buttons:
+•	Explore the Sukun Ecosystem → /projects
+•	Join a Program → /get-involved
+•	Volunteer / Visit → /get-involved
+•	Partner / Support Waqf → /get-involved
+________________________________________
+Section: home-themes
+Ecological + Cultural Themes
+3 Cards:
+1.	Ecological Regeneration
+Through regenerative farming, we heal soil, water, and biodiversity using permaculture and proper land care.
+2.	Cultural Renewal
+Through living education, we renew traditional wisdom and faith- and culture-rooted values for resilient, conscious communities.
+3.	Community Impact
+Through community stewardship, we build ethical livelihoods, cooperation, and long-term social–ecological wellbeing.
+________________________________________
+Section: home-projects-snapshot
+Our Projects — Emerging Initiatives
+Three interconnected initiatives are being developed to bring regeneration into daily life. Two are in visioning and land-securing phases, and one has just begun implementation. Follow our journey as these seeds grow into living realities.
+Mini Cards (3):
+•	Sukun Academy — Bangladesh (Future Project)
+Status: Concept & land phase.
+Button → /projects/sukun-academy
+•	Al Fajr Ecovillage Jamāʿah (Future Project)
+Status: Idea phase.
+Button → /projects/al-fajr-ecovillage
+•	Darul Hayah Regenerative Farm (Implementation Started)
+Status: Early implementation.
+Button → /projects/darul-hayah-farm
+Bottom Button: View All Projects → /projects
+________________________________________
+Section: home-economy
+The Barakah Circular Economy
+Sukun and Al Fajr are envisioned to operate under one Community Land Trust (Waqf — sacred commons) and a regenerative livelihood model that keeps resources circulating ethically within the community.
+Bullets:
+•	Waqf — sacred commons stewardship of land and core assets
+•	Fair exchange rooted in contribution
+•	Participatory Shūrā (consultative ecological leadership) governance
+•	Regenerative reinvestment into soil, people, and learning
+Buttons:
+•	Support the Waqf → /get-involved
+•	Become a Contributor → /get-involved
+________________________________________
+Section: home-cta
+Ready to Make a Difference?
+We welcome people who want to live, learn, and regenerate with sincerity and purpose. These projects are growing — and your support helps bring them to life.
+Buttons:
+Volunteer → /get-involved
+Donate / Waqf → /get-involved
+Partner With Us → /get-involved
+Join Updates → /get-involved
+________________________________________
+PAGE: /about ABOUT
+Section: about-main
+About Sukun Regenerative Culture
+Sukun Regenerative Culture is the heart and philosophy of the Sukun ecosystem — a coordinating framework that guides all our initiatives. It integrates Islamic principles of Tawḥīd (unity), Amānah (trust), and Khilāfah (stewardship) with modern permaculture and regenerative design.
+In a time when chemical farming, cultural fatigue, and rural migration are weakening our relationship with land and tradition, Sukun offers a living pathway back to balance. We bridge indigenous wisdom and contemporary regenerative science, so land can heal, livelihoods can return, and learning can restore dignity.
+________________________________________
+Section: about-landscape
+One Living System in Kulaura, Sylhet
+•	Sukun Academy (7 acres) — the learning and design hub (planned)
+•	Al Fajr Ecovillage (32 acres) — the living community and production sanctuary (planned)
+Together they form a 39-acre regenerative ecosystem rooted in faith, ecology, and cooperation.
+And through partnership:
+•	Darul Hayah Regenerative Farm (15 acres, Gulni, Sylhet) — now entering early implementation.
+________________________________________
+Section: about-pillars
+The Four Pillars of Sukun
+1.	ʿIlm — Knowledge (Learning & Applied Wisdom)
+Cultivating Qur’anic living, ecological literacy, and applied understanding so regeneration starts in the heart and moves into the land.
+2.	Mahārāt — Skills (Practical Abilities)
+Hands-on training in permaculture, natural farming, natural building, traditional crafts, and service leadership.
+3.	Awqāf — Economy (Sacred Commons & Ethical Livelihoods)
+Building a just cooperative economy where land and core assets are held in waqf — sacred commons, enabling shared prosperity and long-term ecological protection.
+4.	Jamāʿah — Community (Cooperative Network)
+A nurturing, Shūrā-guided (consultative ecological leadership) community culture rooted in worship, mutual support, inclusion, and care for the vulnerable.
+________________________________________
+Section: about-team
+Our Team
+We are team of 13 dedicated members, and volunteers who deeply believe in the vision. We are also guided by international advisors who help refine our approach.
+Bullets:
+•	Permaculture-trained members (PDC/PTT graduates)
+•	Experience in NGOs, community organizing, administration, ethical livelihoods
+•	Religious and cultural guidance grounding the work
+•	Youth volunteers being trained for future leadership
+Together, we are building the foundations of Sukun step by step, with sincerity, learning, and service.
+________________________________________
+PAGE: /projects PROJECTS HUB
+Section: projects-intro
+Our Projects
+Three interconnected initiatives are being developed to bring ecological and cultural regeneration into daily life. Two are still in visioning and land-securing phases, and one has just begun implementation. Follow our journey as these seeds grow into living realities.
+________________________________________
+Section: projects-grid
+3 Project Cards (each links to subpage)
+1.	Sukun Academy — Bangladesh (Future Project)
+Planned regenerative learning & training centre.
+Button → /projects/sukun-academy
+2.	Al Fajr Ecovillage Jamāʿah (Future Project)
+Planned ecovillage demonstrating faith- and culture-rooted regenerative living.
+Button → /projects/al-fajr-ecovillage
+3.	Darul Hayah Regenerative Farm (Implementation Started)
+Early-stage regenerative farm & learning sanctuary.
+Button → /projects/darul-hayah-farm
+________________________________________
+SUBPAGE: /projects/sukun-academy
+Section: academy-main
+Sukun Academy — Bangladesh (Future Project)
+A planned regenerative learning and training center in the Sylhet region.
+Sukun Academy is envisioned as a living school for regenerative culture — where youth, farmers, families, and change-makers learn permaculture, natural farming, traditional skills, and stewardship through practice.
+Future focus areas:
+•	Permaculture learning and design certification
+•	Regenerative agriculture and soil restoration training
+•	Natural building and appropriate technology
+•	Youth education, retreats, and volunteer exchange
+Status: Concept and land-development phase.
+Follow for updates: The academy is not yet established — progress will be shared as land is secured and programs begin.
+Buttons:
+Apply for Courses → /get-involved
+Host a Training → /contact
+Volunteer / Work-Study → /get-involved
+________________________________________
+SUBPAGE: /projects/al-fajr-ecovillage
+Section: alfajr-main
+Al Fajr Ecovillage Jamāʿah (Future Project)
+A future faith- and culture-rooted ecovillage in Kulaura, Sylhet — designed to demonstrate ecological living, cooperative community life, and regenerative livelihoods.
+Al Fajr is currently an idea and visioning project, planned as a sanctuary where spiritual life and regenerative land stewardship support one another.
+Future features envisioned:
+•	Eco-mosque and nature-based madrasa
+•	Food forests, community gardens, and water harvesting
+•	Natural homes, renewable energy, and shared facilities
+•	Holistic wellness and community care spaces
+Status: Idea phase; land and structures not yet established.
+Follow for updates: Milestones will be shared as the vision moves into implementation.
+Buttons:
+Join the Vision → /get-involved
+Support Land Waqf → /get-involved
+Partner for Development → /contact
+________________________________________
+SUBPAGE: /projects/darul-hayah-farm
+Section: darulhayah-main
+Darul Hayah Regenerative Farm (Implementation Started)
+A collaborative regenerative farm initiative in Sylhet that has just entered early implementation.
+Darul Hayah is being developed as a working model of land healing, food abundance, and nature-based education.
+Early development includes:
+•	Regenerative farm design and food-forest beginnings
+•	Eco-mosque and outdoor learning spaces (planned)
+•	Youth and volunteer involvement in farm setup
+•	Training programs as the site grows
+Status: Implementation has recently started.
+Follow for updates: This is the first site moving from vision to practice — updates will be shared regularly.
+Buttons:
+Train with Us → /get-involved
+Volunteer at the Farm → /get-involved
+Support the Food Forest → /get-involved
+________________________________________
+PAGE: /get-involved
+Section: involved-main
+Get Involved
+We welcome people who want to live, learn, and regenerate with sincerity and purpose. These projects are growing — and your support helps bring them to life.
+Ways to connect:
+•	Follow our updates
+•	Volunteer / work-study
+•	Partner with us
+•	Support land and project development
+Buttons:
+Volunteer
+Donate / Waqf
+Partner with Us
+Join Updates
+(Link all buttons to WhatsApp/email or a simple form)
+________________________________________
+PAGE: /contact
+Section: contact-main
+Get in Touch
+Join us in cultivating a regenerative future. We welcome collaborations, inquiries, and passionate individuals.
+Md. Hamidur Rahman — Initiating Steward
+Email: heartssee2021@gmail.com
+WhatsApp: +880 1766 023 151
+Location: Sylhet Region, Bangladesh
+Buttons:
+Message on WhatsApp
+Email Us
+________________________________________
+Footer (paste on every page)
+Sukun Regenerative Culture
+Ecological & Cultural Regeneration
+Building a sustainable future through living education, regenerative farming, and community stewardship.
+Quick Links: Home • About • Projects • Get Involved • Contact
+© 2025 Sukun Regenerative Culture. All rights reserved.
+
