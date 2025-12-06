@@ -1,11 +1,10 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 backdrop-blur-md bg-green-900/80  z-50">
+  <nav class="fixed top-0 left-0 right-0 backdrop-blur-md bg-evergreen/90 z-50">
     <div class="container-custom">
       <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2 text-white font-bold text-lg md:text-xl hover:text-mint-light transition-colors drop-shadow-lg">
-          <span>🌿</span>
-          <span>Sukun Academy</span>
+        <a href="/" class="flex items-center gap-2 text-white font-bold text-lg md:text-xl hover:text-sage-mist transition-colors drop-shadow-lg">
+          <span>Sukun Regenerative Culture</span>
         </a>
 
         <!-- Desktop Navigation -->
@@ -14,13 +13,13 @@
             v-for="link in navLinks"
             :key="link.href"
             :href="link.href"
-            class="text-white hover:text-mint-light  transition-colors drop-shadow"
+            class="text-white hover:text-sage-mist transition-colors drop-shadow"
           >
             {{ link.label }}
           </a>
           <!-- <a
             href="/get-involved"
-            class="bg-white text-forest px-5 py-2.5 rounded-full font-semibold hover:bg-mint-light transition-all shadow-lg hover:shadow-xl"
+            class="bg-living-soil text-white px-5 py-2.5 rounded-full font-semibold hover:bg-living-soil-light transition-all shadow-lg hover:shadow-xl"
           >
             Get Involved
           </a> -->
@@ -29,7 +28,7 @@
         <!-- Mobile Menu Button -->
         <button
           @click="toggleMenu"
-          class="md:hidden p-2 text-white hover:text-mint-light transition-colors drop-shadow"
+          class="md:hidden p-2 text-white hover:text-sage-mist transition-colors drop-shadow"
           aria-label="Toggle menu"
           aria-expanded="false"
         >
@@ -51,14 +50,14 @@
           v-for="link in navLinks"
           :key="link.href"
           :href="link.href"
-          class="block text-white hover:text-mint-light font-medium transition-colors py-2"
+          class="block text-white hover:text-sage-mist font-medium transition-colors py-2"
           @click="closeMenu"
         >
           {{ link.label }}
         </a>
         <a
           href="/get-involved"
-          class="block bg-white text-forest px-4 py-2 rounded-full font-semibold hover:bg-mint-light transition-colors text-center"
+          class="block bg-living-soil text-white px-4 py-2 rounded-full font-semibold hover:bg-living-soil-light transition-colors text-center"
           @click="closeMenu"
         >
           Get Involved

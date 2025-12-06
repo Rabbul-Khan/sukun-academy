@@ -5,18 +5,6 @@ import Button from '../../components/Button.vue';
 import Card from '../../components/Card.vue';
 ---
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400&display=swap');
-
-  h1, h2, h3, h4 {
-    font-family: 'EB Garamond', serif;
-  }
-
-  p, li {
-    font-family: 'Inter', sans-serif;
-  }
-</style>
-
 <Layout 
   title="Darul Hayah Regenerative Farm | Implementation Started"
   description="A collaborative regenerative farm initiative in Sylhet that has just entered early implementation."
@@ -28,7 +16,7 @@ import Card from '../../components/Card.vue';
       alt="Darul Hayah Regenerative Farm" 
       class="w-full h-full object-cover"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-forest/80 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-evergreen/80 to-transparent"></div>
   </div>
 
   <section class="section-padding">
@@ -48,25 +36,25 @@ import Card from '../../components/Card.vue';
           <h3 class="mb-4">Early development includes</h3>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
-              <span class="text-leaf text-xl">🌿</span>
+              <span class="text-evergreen text-xl">🌿</span>
               <span>Regenerative farm design and food-forest beginnings</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-leaf text-xl">🕌</span>
+              <span class="text-evergreen text-xl">🕌</span>
               <span>Eco-mosque and outdoor learning spaces <em class="text-charcoal/60">(planned)</em></span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-leaf text-xl">👨‍🌾</span>
+              <span class="text-evergreen text-xl">👨‍🌾</span>
               <span>Youth and volunteer involvement in farm setup</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-leaf text-xl">📚</span>
+              <span class="text-evergreen text-xl">📚</span>
               <span>Training programs as the site grows</span>
             </li>
           </ul>
         </Card>
 
-        <Card client:load className="bg-leaf/10 mb-8">
+        <Card client:load className="bg-sage-mist/40 mb-8">
           <p class="text-sm mb-2">
             <strong>Status:</strong> Implementation has recently started.
           </p>
@@ -83,7 +71,7 @@ import Card from '../../components/Card.vue';
           <Button href="/get-involved" variant="secondary" client:load>
             Volunteer at the Farm
           </Button>
-          <Button href="/get-involved" variant="outline" client:load>
+          <Button href="/get-involved" variant="secondary" client:load>
             Support the Food Forest
           </Button>
         </div>

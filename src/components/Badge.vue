@@ -20,9 +20,9 @@ const props = withDefaults(defineProps<Props>(), {
 
 const variantClasses = computed(() => {
   const variants = {
-    default: 'bg-mint text-forest',
-    success: 'bg-leaf text-white',
-    info: 'bg-forest text-white',
+    default: 'bg-sage-mist text-evergreen',
+    success: 'bg-evergreen text-white',
+    info: 'bg-dark-moss text-warm-paper',
   };
 
   return variants[props.variant];

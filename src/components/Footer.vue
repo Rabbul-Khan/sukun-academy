@@ -1,11 +1,10 @@
 <template>
-  <footer class="bg-forest-dark text-white/90 mt-16">
+  <footer class="bg-evergreen text-white/90 mt-16">
     <div class="container-custom py-12">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
         <!-- Brand Section -->
         <div class="lg:col-span-2">
           <h3 class="text-white text-2xl font-bold mb-3 flex items-center gap-2">
-            <span>🌿</span>
             <span>Sukun Regenerative Culture</span>
           </h3>
           <p class="text-white/80 mb-4 leading-relaxed">
@@ -23,7 +22,7 @@
             <li v-for="link in quickLinks" :key="link.href">
               <a
                 :href="link.href"
-                class="text-white/80 hover:text-white transition-colors text-sm"
+                class="text-white/80 hover:text-sage-mist transition-colors text-sm"
               >
                 {{ link.label }}
               </a>
@@ -36,12 +35,12 @@
           <h4 class="text-white font-semibold mb-4">Connect</h4>
           <ul class="space-y-2 text-sm text-white/80">
             <li>
-              <a href="mailto:heartssee2021@gmail.com" class="hover:text-white transition-colors">
+              <a href="mailto:heartssee2021@gmail.com" class="hover:text-sage-mist transition-colors">
                 📧 Email Us
               </a>
             </li>
             <li>
-              <a href="https://wa.me/8801766023151" class="hover:text-white transition-colors" target="_blank" rel="noopener">
+              <a href="https://wa.me/8801766023151" class="hover:text-sage-mist transition-colors" target="_blank" rel="noopener">
                 💬 WhatsApp
               </a>
             </li>

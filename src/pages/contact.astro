@@ -4,18 +4,6 @@ import Card from '../components/Card.vue';
 import Button from '../components/Button.vue';
 ---
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400&display=swap');
-
-  h1, h2, h3, h4 {
-    font-family: 'EB Garamond', serif;
-  }
-
-  p {
-    font-family: 'Inter', sans-serif;
-  }
-</style>
-
 <Layout 
   title="Contact - Sukun Regenerative Culture"
   description="Get in touch with Sukun Regenerative Culture. We welcome collaborations, inquiries, and passionate individuals."
@@ -38,31 +26,31 @@ import Button from '../components/Button.vue';
           </div>
 
           <div class="space-y-4 mb-8">
-            <div class="flex items-center gap-3 p-3 bg-sand rounded-lg">
+            <div class="flex items-center gap-3 p-3 bg-sage-mist/40 rounded-lg">
               <span class="text-2xl">📧</span>
               <div>
                 <p class="text-sm text-charcoal/70 mb-1">Email</p>
-                <a href="mailto:heartssee2021@gmail.com" class="text-leaf hover:text-leaf-dark font-medium">
+                <a href="mailto:heartssee2021@gmail.com" class="text-evergreen hover:text-evergreen-light font-medium">
                   heartssee2021@gmail.com
                 </a>
               </div>
             </div>
 
-            <div class="flex items-center gap-3 p-3 bg-sand rounded-lg">
+            <div class="flex items-center gap-3 p-3 bg-sage-mist/40 rounded-lg">
               <span class="text-2xl">💬</span>
               <div>
                 <p class="text-sm text-charcoal/70 mb-1">WhatsApp</p>
-                <a href="https://wa.me/8801766023151" class="text-leaf hover:text-leaf-dark font-medium" target="_blank" rel="noopener">
+                <a href="https://wa.me/8801766023151" class="text-evergreen hover:text-evergreen-light font-medium" target="_blank" rel="noopener">
                   +880 1766 023 151
                 </a>
               </div>
             </div>
 
-            <div class="flex items-center gap-3 p-3 bg-sand rounded-lg">
+            <div class="flex items-center gap-3 p-3 bg-sage-mist/40 rounded-lg">
               <span class="text-2xl">📍</span>
               <div>
                 <p class="text-sm text-charcoal/70 mb-1">Location</p>
-                <p class="font-medium text-forest">Sylhet Region, Bangladesh</p>
+                <p class="font-medium text-dark-moss">Sylhet Region, Bangladesh</p>
               </div>
             </div>
           </div>
@@ -71,7 +59,7 @@ import Button from '../components/Button.vue';
             <Button href="https://wa.me/8801766023151" client:load>
               Message on WhatsApp
             </Button>
-            <Button href="mailto:heartssee2021@gmail.com" variant="outline" client:load>
+            <Button href="mailto:heartssee2021@gmail.com" variant="secondary" client:load>
               Email Us
             </Button>
           </div>

@@ -5,18 +5,6 @@ import Button from '../../components/Button.vue';
 import Card from '../../components/Card.vue';
 ---
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400&display=swap');
-
-  h1, h2, h3, h4 {
-    font-family: 'EB Garamond', serif;
-  }
-
-  p, li {
-    font-family: 'Inter', sans-serif;
-  }
-</style>
-
 <Layout 
   title="Sukun Academy - Bangladesh | Future Project"
   description="A planned regenerative learning and training center in the Sylhet region."
@@ -28,7 +16,7 @@ import Card from '../../components/Card.vue';
       alt="Sukun Academy Bangladesh" 
       class="w-full h-full object-cover"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-forest/80 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-evergreen/80 to-transparent"></div>
   </div>
 
   <section class="section-padding">
@@ -49,25 +37,25 @@ import Card from '../../components/Card.vue';
           <h3 class="mb-4">Future focus areas</h3>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
-              <span class="text-leaf text-xl">🎓</span>
+              <span class="text-evergreen text-xl">🎓</span>
               <span>Permaculture learning and design certification</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-leaf text-xl">🌾</span>
+              <span class="text-evergreen text-xl">🌾</span>
               <span>Regenerative agriculture and soil restoration training</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-leaf text-xl">🏗️</span>
+              <span class="text-evergreen text-xl">🏗️</span>
               <span>Natural building and appropriate technology</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-leaf text-xl">🌟</span>
+              <span class="text-evergreen text-xl">🌟</span>
               <span>Youth education, retreats, and volunteer exchange</span>
             </li>
           </ul>
         </Card>
 
-        <Card client:load className="bg-mint/10 mb-8">
+        <Card client:load className="bg-sage-mist/40 mb-8">
           <p class="text-sm mb-2">
             <strong>Status:</strong> Concept and land-development phase.
           </p>
@@ -81,7 +69,7 @@ import Card from '../../components/Card.vue';
           <Button href="/get-involved" client:load>
             Apply for Courses
           </Button>
-          <Button href="/contact" variant="outline" client:load>
+          <Button href="/contact" variant="secondary" client:load>
             Host a Training
           </Button>
           <Button href="/get-involved" variant="secondary" client:load>

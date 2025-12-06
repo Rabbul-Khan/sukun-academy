@@ -1,21 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  --color-forest: #0F3D2E;
-  --color-forest-dark: #0a2a1f;
-  --color-leaf: #2E7D32;
-  --color-leaf-dark: #1b5e20;
-  --color-leaf-light: #4caf50;
-  --color-mint: #A8D5BA;
-  --color-mint-light: #c8e6d0;
-  --color-mint-dark: #88c5a0;
-  --color-sand: #F4F7F2;
-  --color-sand-light: #f9fbf8;
-  --color-charcoal: #1C1C1C;
-  
-  --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.04);
-  --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.08);
-  --shadow-button: 0 6px 16px rgba(15, 61, 46, 0.12);
+  --color-evergreen: #1B4332;
+  --color-evergreen-dark: #123021;
+  --color-evergreen-light: #2A5C49;
+  --color-living-soil: #BC6C25;
+  --color-living-soil-light: #D27F35;
+  --color-sage-mist: #D8F3DC;
+  --color-mist: #E9EFE6;
+  --color-warm-paper: #F7F5F0;
+  --color-charcoal: #2D312F;
+  --color-dark-moss: #081C15;
+  --color-stone: #6B7280;
+  --color-card-bg: #FFFFFF;
+  --color-burnt-clay: #D64045;
+
+  --shadow-card: 0 4px 12px rgba(27, 67, 50, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(27, 67, 50, 0.12);
+  --shadow-button: 0 8px 24px rgba(27, 67, 50, 0.12);
+}
+
+:root {
+  /* Color aliases */
+  --color-primary: var(--color-evergreen);
+  --color-secondary: var(--color-living-soil);
+  --color-accent: var(--color-sage-mist);
+  --color-bg-main: var(--color-warm-paper);
+  --color-bg-alt: var(--color-mist);
+  --color-bg-card: var(--color-card-bg);
+  --color-text-heading: var(--color-dark-moss);
+  --color-text-body: var(--color-charcoal);
+  --color-text-muted: var(--color-stone);
+  --color-error: var(--color-burnt-clay);
+
+  /* Typography */
+  --font-heading: 'Lora', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 32px;
+  --space-xl: 64px;
+  --space-xxl: 128px;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(27, 67, 50, 0.08);
+  --shadow-md: 0 8px 24px rgba(27, 67, 50, 0.12);
 }
 
 @layer base {
@@ -24,8 +61,8 @@
   }
 
   body {
-    @apply bg-sand text-charcoal antialiased;
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    @apply bg-warm-paper text-charcoal antialiased;
+    font-family: var(--font-body);
     line-height: 1.6;
   }
 
@@ -35,28 +72,29 @@
   h4,
   h5,
   h6 {
-    @apply text-forest font-semibold;
+    font-family: var(--font-heading);
+    @apply text-dark-moss;
     line-height: 1.25;
   }
 
   h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight;
   }
 
   h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
+    @apply text-3xl md:text-4xl lg:text-[2.75rem] font-medium;
   }
 
   h3 {
-    @apply text-xl md:text-2xl lg:text-3xl;
+    @apply text-2xl md:text-[29px] font-normal;
   }
 
   h4 {
-    @apply text-lg md:text-xl;
+    @apply text-xl font-normal;
   }
 
   p {
-    @apply mb-4;
+    @apply mb-4 text-base;
   }
 
   a {
@@ -64,7 +102,7 @@
   }
 
   strong {
-    @apply font-semibold text-forest;
+    @apply font-semibold text-evergreen;
   }
 
   em {
@@ -89,12 +127,12 @@
 
   /* Section spacing */
   .section-padding {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-16 md:py-20 lg:py-24;
   }
 
   /* Focus visible styles for accessibility */
   *:focus-visible {
-    @apply outline-none ring-2 ring-leaf ring-offset-2 ring-offset-sand;
+    @apply outline-none ring-2 ring-evergreen ring-offset-2 ring-offset-warm-paper;
   }
 }
 

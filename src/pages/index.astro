@@ -6,21 +6,21 @@ import Badge from '../components/Badge.vue';
 ---
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400&display=swap');
-
   .hero-title {
-    font-family: 'EB Garamond', serif;
-    font-weight: 700;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 
   .hero-tagline {
-    font-family: 'EB Garamond', serif;
+    font-family: var(--font-heading);
     font-style: italic;
     font-weight: 400;
+    letter-spacing: -0.005em;
   }
 
   .hero-description {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-weight: 400;
   }
 </style>
@@ -33,9 +33,9 @@ import Badge from '../components/Badge.vue';
       <img 
         src="/images/farm.png" 
         alt="Sukun Regenerative Culture - Sylhet Farm" 
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover brightness-80"
       />
-      <div class="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/65 to-leaf/55"></div>
+      <div class="absolute inset-0 bg-dark-moss/40"></div>
       <div class="absolute inset-0 backdrop-blur-[2px]"></div>
     </div>
     
@@ -53,22 +53,22 @@ import Badge from '../components/Badge.vue';
         </p>
         
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="/projects" class="inline-block bg-white text-forest px-7 py-3 rounded-md font-medium text-sm hover:bg-mint-light transition-all shadow-lg hover:shadow-xl">
-            Discover more
-          </a>
+          <Button href="/projects" client:load>
+            Discover More
+          </Button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Ecological + Cultural Themes -->
-  <section class="section-padding">
+  <section class="section-padding bg-warm-paper">
     <div class="container-custom">
       <h2 class="text-center mb-12">Ecological + Cultural Themes</h2>
       
       <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
         <Card client:load>
-          <div class="text-4xl mb-4">🌱</div>
+          <div class="mb-4 flex justify-center text-evergreen"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-9 w-9" fill="currentColor"><path d="M216-176q-45-45-70.5-104T120-402q0-63 24-124.5T222-642q35-35 86.5-60t122-39.5Q501-756 591.5-759t202.5 7q8 106 5 195t-16.5 160.5q-13.5 71.5-38 125T684-182q-53 53-112.5 77.5T450-80q-65 0-127-25.5T216-176Zm112-16q29 17 59.5 24.5T450-160q46 0 91-18.5t86-59.5q18-18 36.5-50.5t32-85Q709-426 716-500.5t2-177.5q-49-2-110.5-1.5T485-670q-61 9-116 29t-90 55q-45 45-62 89t-17 85q0 59 22.5 103.5T262-246q42-80 111-153.5T534-520q-72 63-125.5 142.5T328-192Zm0 0Zm0 0Z"/></svg></div>
           <h3 class="mb-3">Ecological Regeneration</h3>
           <p class="text-charcoal/80">
             Through <strong>regenerative farming</strong>, we heal soil, water, and biodiversity
@@ -77,7 +77,7 @@ import Badge from '../components/Badge.vue';
         </Card>
 
         <Card client:load>
-          <div class="text-4xl mb-4">📚</div>
+          <div class="mb-4 flex justify-center text-evergreen"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-9 w-9" fill="currentColor"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg></div>
           <h3 class="mb-3">Cultural Renewal</h3>
           <p class="text-charcoal/80">
             Through <strong>living education</strong>, we renew traditional wisdom and
@@ -86,7 +86,7 @@ import Badge from '../components/Badge.vue';
         </Card>
 
         <Card client:load>
-          <div class="text-4xl mb-4">🤝</div>
+          <div class="mb-4 flex justify-center text-evergreen"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-9 w-9" fill="currentColor"><path d="M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z"/></svg></div>
           <h3 class="mb-3">Community Impact</h3>
           <p class="text-charcoal/80">
             Through <strong>community stewardship</strong>, we build ethical livelihoods,
@@ -98,7 +98,7 @@ import Badge from '../components/Badge.vue';
   </section>
 
   <!-- Our Projects -->
-  <section class="section-padding bg-gradient-to-br from-mint/5 to-sand">
+  <section class="section-padding bg-mist">
     <div class="container-custom">
       <div class="max-w-3xl mx-auto text-center mb-12">
         <h2 class="mb-4">Our Projects — Emerging Initiatives</h2>
@@ -113,7 +113,7 @@ import Badge from '../components/Badge.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/sukun academy bangladesh.jpeg" 
+              src="/images/sukun academy bangladesh.png" 
               alt="Sukun Academy Bangladesh" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -134,7 +134,7 @@ import Badge from '../components/Badge.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/al fajr eco village.jpeg" 
+              src="/images/al fajr eco village.png" 
               alt="Al Fajr Ecovillage" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -155,7 +155,7 @@ import Badge from '../components/Badge.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/Darul Hayah Regenerative Farm.jpeg" 
+              src="/images/Darul Hayah Regenerative Farm.png" 
               alt="Darul Hayah Regenerative Farm" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -183,73 +183,75 @@ import Badge from '../components/Badge.vue';
   </section>
 
   <!-- The Barakah Circular Economy -->
-  <section class="section-padding">
+  <section class="section-padding bg-warm-paper">
     <div class="container-custom">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="mb-6">The Barakah Circular Economy</h2>
-        
-        <p class="text-lg text-charcoal/80 mb-6 leading-relaxed">
-          Sukun and Al Fajr are envisioned to operate under one
-          <strong>Community Land Trust (Waqf — sacred commons)</strong>
-          and a regenerative livelihood model that keeps resources circulating ethically within the community.
-        </p>
+      <div class="rounded-3xl bg-card-bg px-8 py-12 shadow-card md:px-12 lg:flex lg:items-start lg:gap-14">
+        <div class="flex-1 space-y-8 my-auto">
+          <div class="space-y-3">
+            <h2 class="text-3xl font-medium leading-tight text-charcoal md:text-4xl">
+              The Barakah Circular Economy
+            </h2>
+            <p class="text-lg text-charcoal/80 leading-relaxed">
+              Sukun and Al Fajr are envisioned to operate under one Community Land Trust (Waqf — sacred commons) and a regenerative livelihood model that keeps resources circulating ethically within the community.
+            </p>
+          </div>
 
-        <div class="grid sm:grid-cols-2 gap-4 mb-8">
-          <Card client:load>
-            <div class="flex items-start gap-3">
-              <span class="text-2xl">🕌</span>
-              <div>
-                <h4 class="font-semibold text-forest mb-1">Waqf — Sacred Commons</h4>
-                <p class="text-sm text-charcoal/80">Stewardship of land and core assets</p>
-              </div>
-            </div>
-          </Card>
-
-          <Card client:load>
-            <div class="flex items-start gap-3">
-              <span class="text-2xl">⚖️</span>
-              <div>
-                <h4 class="font-semibold text-forest mb-1">Fair Exchange</h4>
-                <p class="text-sm text-charcoal/80">Rooted in contribution</p>
-              </div>
-            </div>
-          </Card>
-
-          <Card client:load>
-            <div class="flex items-start gap-3">
-              <span class="text-2xl">🗣️</span>
-              <div>
-                <h4 class="font-semibold text-forest mb-1">Shūrā Governance</h4>
-                <p class="text-sm text-charcoal/80">Consultative ecological leadership</p>
-              </div>
-            </div>
-          </Card>
-
-          <Card client:load>
-            <div class="flex items-start gap-3">
-              <span class="text-2xl">♻️</span>
-              <div>
-                <h4 class="font-semibold text-forest mb-1">Regenerative Reinvestment</h4>
-                <p class="text-sm text-charcoal/80">Into soil, people, and learning</p>
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        <div class="flex flex-wrap gap-3 justify-center">
-          <Button href="/get-involved" client:load>
+          <Button href="/get-involved" class="mt-4 mr-4" client:load>
             Support the Waqf
           </Button>
-          <Button href="/get-involved" variant="outline" client:load>
-            Become a Contributor
+
+          <Button href="/get-involved" class="mt-4" client:load>
+            Become a contributor
           </Button>
+        </div>
+
+        <div class="mt-12 flex-1 space-y-4 lg:mt-0">
+          <div class="rounded-2xl bg-warm-paper px-6 py-5 shadow-card">
+            <div class="flex items-center gap-4">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full text-lg text-dark-moss"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"  class="fill-evergreen w-9 h-9" ><path d="M40-120v-491q-18-11-29-28.5T0-680q0-23 24-56t56-64q32 31 56 64t24 56q0 23-11 40.5T120-611v171h80v-80q0-25 16-48t46-30q-11-17-16.5-37t-5.5-41q0-40 19-74t51-56l170-114 170 114q32 22 51 56t19 74q0 21-5.5 41T698-598q30 7 46 30t16 48v80h80v-171q-18-11-29-28.5T800-680q0-23 24-56t56-64q32 31 56 64t24 56q0 23-11 40.5T920-611v491H520v-160q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280v160H40Zm356-480h168q32 0 54-22t22-54q0-20-9-36.5T606-740l-126-84-126 84q-16 11-25 27.5t-9 36.5q0 32 22 54t54 22ZM120-200h240v-80q0-50 35-85t85-35q50 0 85 35t35 85v80h240v-160H680v-160H280v160H120v160Zm360-320Zm0-80Zm0 2Z"/></svg></span>
+              <div class="space-y-1">
+                <p class="font-semibold text-charcoal">Waqf</p>
+                <p class="text-sm text-charcoal/70 !mb-0">Sacred commons stewardship of land and core assets.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-warm-paper px-6 py-5 shadow-card">
+            <div class="flex items-center gap-4">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full text-lg text-dark-moss"><svg class="fill-evergreen w-9 h-9" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"  fill="#e8eaed"><path d="M80-120v-80h360v-447q-26-9-45-28t-28-45H240l120 280q0 50-41 85t-99 35q-58 0-99-35t-41-85l120-280h-80v-80h247q12-35 43-57.5t70-22.5q39 0 70 22.5t43 57.5h247v80h-80l120 280q0 50-41 85t-99 35q-58 0-99-35t-41-85l120-280H593q-9 26-28 45t-45 28v447h360v80H80Zm585-320h150l-75-174-75 174Zm-520 0h150l-75-174-75 174Zm335-280q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg></span>
+              <div class="space-y-1">
+                <p class="font-semibold text-charcoal">Fairness</p>
+                <p class="text-sm text-charcoal/70 !mb-0">Fair exchange rooted in contribution.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-warm-paper px-6 py-5 shadow-card">
+            <div class="flex items-center gap-4">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full text-lg text-dark-moss"><svg xmlns="http://www.w3.org/2000/svg" class="fill-evergreen w-9 h-9" viewBox="0 -960 960 960"><path d="m798-322-62-62q44-41 69-97t25-119q0-63-25-118t-69-96l62-64q56 53 89 125t33 153q0 81-33 153t-89 125ZM670-450l-64-64q18-17 29-38.5t11-47.5q0-26-11-47.5T606-686l64-64q32 29 50 67.5t18 82.5q0 44-18 82.5T670-450Zm-310 10q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-120v-112q0-33 17-62t47-44q51-26 115-44t141-18q77 0 141 18t115 44q30 15 47 44t17 62v112H40Zm80-80h480v-32q0-11-5.5-20T580-266q-36-18-92.5-36T360-320q-71 0-127.5 18T140-266q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-600q0-33-23.5-56.5T360-680q-33 0-56.5 23.5T280-600q0 33 23.5 56.5T360-520Zm0-80Zm0 400Z"/></svg></span>
+              <div class="space-y-1">
+                <p class="font-semibold text-charcoal">Participatory Shūrā Governance</p>
+                <p class="text-sm text-charcoal/70 !mb-0">Consultative ecological leadership.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-warm-paper px-6 py-5 shadow-card">
+            <div class="flex items-center gap-4">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full text-lg text-dark-moss"><svg xmlns="http://www.w3.org/2000/svg" class="fill-evergreen w-9 h-9" viewBox="0 -960 960 960" ><path d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z"/></svg></span>
+              <div class="space-y-1">
+                <p class="font-semibold text-charcoal">Regenerative Reinvestment</p>
+                <p class="text-sm text-charcoal/70 !mb-0">Regenerative reinvestment into soil, people, and learning.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="section-padding bg-gradient-to-br from-forest to-forest-dark text-white">
+  <!-- <section class="section-padding bg-gradient-to-br from-evergreen to-evergreen-dark text-white">
     <div class="container-custom">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="mb-6 text-white">Ready to Make a Difference?</h2>
@@ -267,13 +269,13 @@ import Badge from '../components/Badge.vue';
             Donate / Waqf
           </Button>
           <Button href="/get-involved" variant="outline" client:load>
-            <span class="text-white hover:text-forest">Partner With Us</span>
+            Partner With Us
           </Button>
           <Button href="/get-involved" variant="outline" client:load>
-            <span class="text-white hover:text-forest">Join Updates</span>
+            Join Updates
           </Button>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </Layout>

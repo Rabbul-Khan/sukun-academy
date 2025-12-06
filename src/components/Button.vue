@@ -4,7 +4,7 @@
     :href="href"
     :type="!href ? type : undefined"
     :class="buttonClasses"
-    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+    class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-base transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed tracking-wide"
   >
     <slot />
   </component>
@@ -28,15 +28,15 @@ const props = withDefaults(defineProps<Props>(), {
 
 const buttonClasses = computed(() => {
   const variants = {
-    primary: 'bg-leaf text-white hover:bg-leaf-dark shadow-button hover:shadow-card-hover hover:-translate-y-0.5',
-    secondary: 'bg-forest text-white hover:bg-forest-dark shadow-button hover:shadow-card-hover hover:-translate-y-0.5',
-    outline: 'bg-transparent text-leaf border-2 border-leaf hover:bg-leaf hover:text-white',
+    primary: 'bg-living-soil text-white shadow-button hover:bg-living-soil-dark hover:shadow-card-hover hover:-translate-y-0.5 focus:ring-living-soil focus:ring-offset-warm-paper',
+    secondary: 'bg-transparent text-evergreen border-2 border-evergreen hover:bg-evergreen hover:text-warm-paper hover:-translate-y-0.5 focus:ring-evergreen focus:ring-offset-warm-paper',
+    outline: 'bg-transparent text-white border-2 border-white hover:bg-white hover:text-evergreen hover:-translate-y-0.5 focus:ring-white focus:ring-offset-evergreen',
   };
 
   const sizes = {
-    sm: 'px-3 py-1.5 text-xs',
-    md: 'px-5 py-2.5 text-sm',
-    lg: 'px-6 py-3 text-base',
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-base',
+    lg: 'px-8 py-4 text-lg',
   };
 
   return `${variants[props.variant]} ${sizes[props.size]}`;
