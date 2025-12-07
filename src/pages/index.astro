@@ -1,8 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import Button from '../components/Button.vue';
 import Card from '../components/Card.vue';
 import Badge from '../components/Badge.vue';
+import farmImage from '../assets/images/farm.png';
+import sukunAcademyImage from '../assets/images/sukun academy bangladesh.png';
+import alFajrImage from '../assets/images/al fajr eco village.png';
+import darulHayahImage from '../assets/images/Darul Hayah Regenerative Farm.png';
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
@@ -33,7 +38,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
       <img 
-        src={`${baseUrl}images/farm.png`}
+        src={farmImage.src}
         alt="Sukun Regenerative Culture - Sylhet Farm" 
         class="w-full h-full object-cover brightness-80"
       />
@@ -113,8 +118,8 @@ const baseUrl = import.meta.env.BASE_URL;
       <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
-            <img 
-              src={`${baseUrl}images/sukun academy bangladesh.png`}
+            <Image 
+              src={sukunAcademyImage}
               alt="Sukun Academy Bangladesh" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -134,8 +139,8 @@ const baseUrl = import.meta.env.BASE_URL;
 
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
-            <img 
-              src={`${baseUrl}images/al fajr eco village.png`}
+            <Image 
+              src={alFajrImage}
               alt="Al Fajr Ecovillage" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -155,8 +160,8 @@ const baseUrl = import.meta.env.BASE_URL;
 
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
-            <img 
-              src={`${baseUrl}images/Darul Hayah Regenerative Farm.png`}
+            <Image 
+              src={darulHayahImage}
               alt="Darul Hayah Regenerative Farm" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
