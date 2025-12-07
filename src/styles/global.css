@@ -111,7 +111,7 @@
 
   ul,
   ol {
-    @apply pl-5 mb-4;
+    @apply mb-4;
   }
 
   li {

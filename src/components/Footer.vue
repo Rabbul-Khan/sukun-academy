@@ -36,16 +36,16 @@
           <ul class="space-y-2 text-sm text-white/80">
             <li>
               <a href="mailto:heartssee2021@gmail.com" class="hover:text-sage-mist transition-colors">
-                📧 Email Us
+                Email Us
               </a>
             </li>
             <li>
               <a href="https://wa.me/8801766023151" class="hover:text-sage-mist transition-colors" target="_blank" rel="noopener">
-                💬 WhatsApp
+                WhatsApp
               </a>
             </li>
             <li class="pt-2">
-              📍 Sylhet Region, Bangladesh
+              Sylhet Region, Bangladesh
             </li>
           </ul>
         </div>
