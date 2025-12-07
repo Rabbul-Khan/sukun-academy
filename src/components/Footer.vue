@@ -60,11 +60,21 @@
 </template>
 
 <script setup lang="ts">
-const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Get Involved', href: '/get-involved' },
-  { label: 'Contact', href: '/contact' },
-];
+import { computed } from 'vue';
+
+interface Props {
+  baseUrl?: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  baseUrl: '/'
+});
+
+const quickLinks = computed(() => [
+  { label: 'Home', href: props.baseUrl },
+  { label: 'About', href: `${props.baseUrl}about` },
+  { label: 'Projects', href: `${props.baseUrl}projects` },
+  { label: 'Get Involved', href: `${props.baseUrl}get-involved` },
+  { label: 'Contact', href: `${props.baseUrl}contact` },
+]);
 </script>

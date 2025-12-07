@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Badge from '../../components/Badge.vue';
 import Button from '../../components/Button.vue';
 import Card from '../../components/Card.vue';
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout 
@@ -12,7 +14,7 @@ import Card from '../../components/Card.vue';
   <!-- Hero Image -->
   <div class="relative h-64 md:h-96 overflow-hidden">
     <img 
-      src="/images/al fajr eco village.jpeg" 
+      src={`${baseUrl}images/al fajr eco village.jpeg`}
       alt="Al Fajr Ecovillage" 
       class="w-full h-full object-cover"
     />
@@ -68,13 +70,13 @@ import Card from '../../components/Card.vue';
         </Card>
 
         <div class="flex flex-wrap gap-3">
-          <Button href="/get-involved" client:load>
+          <Button href="/get-involved" baseUrl={baseUrl} client:load>
             Join the Vision
           </Button>
-          <Button href="/get-involved" variant="secondary" client:load>
+          <Button href="/get-involved" variant="secondary" baseUrl={baseUrl} client:load>
             Support Land Waqf
           </Button>
-          <Button href="/contact" variant="secondary" client:load>
+          <Button href="/contact" variant="secondary" baseUrl={baseUrl} client:load>
             Partner for Development
           </Button>
         </div>

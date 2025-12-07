@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.vue';
 import Badge from '../components/Badge.vue';
 import Button from '../components/Button.vue';
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout 
@@ -24,7 +26,7 @@ import Button from '../components/Button.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/sukun academy bangladesh.jpeg" 
+              src={`${baseUrl}images/sukun academy bangladesh.jpeg`}
               alt="Sukun Academy Bangladesh" 
               class="w-full h-56 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -34,7 +36,7 @@ import Button from '../components/Button.vue';
           <p class="text-charcoal/80 mb-6">
             Planned regenerative learning & training centre in Sylhet.
           </p>
-          <Button href="/projects/sukun-academy" client:load>
+          <Button href="/projects/sukun-academy" baseUrl={baseUrl} client:load>
             Open Project
           </Button>
         </Card>
@@ -42,7 +44,7 @@ import Button from '../components/Button.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/al fajr eco village.jpeg" 
+              src={`${baseUrl}images/al fajr eco village.jpeg`}
               alt="Al Fajr Ecovillage" 
               class="w-full h-56 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -52,7 +54,7 @@ import Button from '../components/Button.vue';
           <p class="text-charcoal/80 mb-6">
             Planned ecovillage in Kulaura, Sylhet.
           </p>
-          <Button href="/projects/al-fajr-ecovillage" client:load>
+          <Button href="/projects/al-fajr-ecovillage" baseUrl={baseUrl} client:load>
             Open Project
           </Button>
         </Card>
@@ -60,7 +62,7 @@ import Button from '../components/Button.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/Darul Hayah Regenerative Farm.jpeg" 
+              src={`${baseUrl}images/Darul Hayah Regenerative Farm.jpeg`}
               alt="Darul Hayah Regenerative Farm" 
               class="w-full h-56 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -70,7 +72,7 @@ import Button from '../components/Button.vue';
           <p class="text-charcoal/80 mb-6">
             Early-stage regenerative farm & learning sanctuary.
           </p>
-          <Button href="/projects/darul-hayah-farm" client:load>
+          <Button href="/projects/darul-hayah-farm" baseUrl={baseUrl} client:load>
             Open Project
           </Button>
         </Card>

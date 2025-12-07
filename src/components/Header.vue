@@ -3,7 +3,7 @@
     <div class="container-custom">
       <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2 text-white font-bold text-lg md:text-xl hover:text-sage-mist transition-colors drop-shadow-lg">
+        <a :href="baseUrl" class="flex items-center gap-2 text-white font-bold text-lg md:text-xl hover:text-sage-mist transition-colors drop-shadow-lg">
           <span>Sukun Regenerative Culture</span>
         </a>
 
@@ -56,7 +56,7 @@
           {{ link.label }}
         </a>
         <a
-          href="/get-involved"
+          :href="`${baseUrl}get-involved`"
           class="block bg-living-soil text-white px-4 py-2 rounded-full font-semibold hover:bg-living-soil-light transition-colors text-center"
           @click="closeMenu"
         >
@@ -68,15 +68,23 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Contact', href: '/contact' },
-  {label: 'Get Involved', href: '/get-involved'}
-];
+interface Props {
+  baseUrl?: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  baseUrl: '/'
+});
+
+const navLinks = computed(() => [
+  { label: 'Home', href: `${props.baseUrl}` },
+  { label: 'About', href: `${props.baseUrl}about` },
+  { label: 'Projects', href: `${props.baseUrl}projects` },
+  { label: 'Contact', href: `${props.baseUrl}contact` },
+  { label: 'Get Involved', href: `${props.baseUrl}get-involved` }
+]);
 
 const isMenuOpen = ref(false);
 

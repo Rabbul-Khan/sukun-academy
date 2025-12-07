@@ -1,7 +1,7 @@
 <template>
   <component
     :is="href ? 'a' : 'button'"
-    :href="href"
+    :href="fullHref"
     :type="!href ? type : undefined"
     :class="buttonClasses"
     class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-base transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed tracking-wide"
@@ -18,12 +18,25 @@ interface Props {
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   type?: 'button' | 'submit' | 'reset';
+  baseUrl?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   variant: 'primary',
   size: 'md',
   type: 'button',
+  baseUrl: '/'
+});
+
+const fullHref = computed(() => {
+  if (!props.href) return undefined;
+  // If it's an external link or already has base, return as is
+  if (props.href.startsWith('http') || props.href.startsWith(props.baseUrl)) {
+    return props.href;
+  }
+  // For internal links, prepend baseUrl
+  const path = props.href.startsWith('/') ? props.href.slice(1) : props.href;
+  return `${props.baseUrl}${path}`;
 });
 
 const buttonClasses = computed(() => {

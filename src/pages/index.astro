@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.vue';
 import Card from '../components/Card.vue';
 import Badge from '../components/Badge.vue';
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <style>
@@ -31,7 +33,7 @@ import Badge from '../components/Badge.vue';
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
       <img 
-        src="/images/farm.png" 
+        src={`${baseUrl}images/farm.png`}
         alt="Sukun Regenerative Culture - Sylhet Farm" 
         class="w-full h-full object-cover brightness-80"
       />
@@ -52,7 +54,7 @@ import Badge from '../components/Badge.vue';
           A faith- and culture-rooted movement for ecological and cultural regeneration in Sylhet, Bangladesh. We cultivate inner peace (sukūn) and outward renewal (tajdīd) through living education, regenerative farming, and community stewardship — restoring the bond between soul, soil, and society.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <Button href="/projects" client:load>
+          <Button href="/projects" baseUrl={baseUrl} client:load>
             Discover More
           </Button>
         </div>
@@ -112,7 +114,7 @@ import Badge from '../components/Badge.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/sukun academy bangladesh.png" 
+              src={`${baseUrl}images/sukun academy bangladesh.png`}
               alt="Sukun Academy Bangladesh" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -125,7 +127,7 @@ import Badge from '../components/Badge.vue';
           <p class="text-charcoal/80 mb-4">
             Planned regenerative learning & training centre in Sylhet.
           </p>
-          <Button href="/projects/sukun-academy" size="sm" client:load>
+          <Button href="/projects/sukun-academy" size="sm" baseUrl={baseUrl} client:load>
             Learn More
           </Button>
         </Card>
@@ -133,7 +135,7 @@ import Badge from '../components/Badge.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/al fajr eco village.png" 
+              src={`${baseUrl}images/al fajr eco village.png`}
               alt="Al Fajr Ecovillage" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -146,7 +148,7 @@ import Badge from '../components/Badge.vue';
           <p class="text-charcoal/80 mb-4">
             Planned ecovillage demonstrating faith- and culture-rooted regenerative living.
           </p>
-          <Button href="/projects/al-fajr-ecovillage" size="sm" client:load>
+          <Button href="/projects/al-fajr-ecovillage" size="sm" baseUrl={baseUrl} client:load>
             Learn More
           </Button>
         </Card>
@@ -154,7 +156,7 @@ import Badge from '../components/Badge.vue';
         <Card client:load>
           <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
             <img 
-              src="/images/Darul Hayah Regenerative Farm.png" 
+              src={`${baseUrl}images/Darul Hayah Regenerative Farm.png`}
               alt="Darul Hayah Regenerative Farm" 
               class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -167,14 +169,14 @@ import Badge from '../components/Badge.vue';
           <p class="text-charcoal/80 mb-4">
             Early-stage regenerative farm & learning sanctuary.
           </p>
-          <Button href="/projects/darul-hayah-farm" size="sm" client:load>
+          <Button href="/projects/darul-hayah-farm" size="sm" baseUrl={baseUrl} client:load>
             Learn More
           </Button>
         </Card>
       </div>
 
       <div class="text-center">
-        <Button href="/projects" variant="secondary" client:load>
+        <Button href="/projects" variant="secondary" baseUrl={baseUrl} client:load>
           View All Projects
         </Button>
       </div>
@@ -195,11 +197,11 @@ import Badge from '../components/Badge.vue';
             </p>
           </div>
 
-          <Button href="/get-involved" class="mt-4 mr-4" client:load>
+          <Button href="/get-involved" class="mt-4 mr-4" baseUrl={baseUrl} client:load>
             Support the Waqf
           </Button>
 
-          <Button href="/get-involved" class="mt-4" client:load>
+          <Button href="/get-involved" class="mt-4" baseUrl={baseUrl} client:load>
             Become a contributor
           </Button>
         </div>
@@ -261,16 +263,16 @@ import Badge from '../components/Badge.vue';
         </p>
 
         <div class="flex flex-wrap justify-center gap-3">
-          <Button href="/get-involved" client:load>
+          <Button href="/get-involved" baseUrl={baseUrl} client:load>
             Volunteer
           </Button>
-          <Button href="/get-involved" client:load>
+          <Button href="/get-involved" baseUrl={baseUrl} client:load>
             Donate / Waqf
           </Button>
-          <Button href="/get-involved" variant="outline" client:load>
+          <Button href="/get-involved" variant="outline" baseUrl={baseUrl} client:load>
             Partner With Us
           </Button>
-          <Button href="/get-involved" variant="outline" client:load>
+          <Button href="/get-involved" variant="outline" baseUrl={baseUrl} client:load>
             Join Updates
           </Button>
         </div>

@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.vue';
 import Button from '../components/Button.vue';
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout 
@@ -46,7 +48,7 @@ import Button from '../components/Button.vue';
             <p class="text-charcoal/80 mb-4">
               Join us on the ground to learn, contribute, and be part of the regenerative movement.
             </p>
-            <Button href="/contact" size="sm" client:load>
+            <Button href="/contact" size="sm" baseUrl={baseUrl} client:load>
               Volunteer Inquiry
             </Button>
           </Card>
@@ -56,7 +58,7 @@ import Button from '../components/Button.vue';
             <p class="text-charcoal/80 mb-4">
               Support land acquisition, infrastructure, and programs through charitable giving.
             </p>
-            <Button href="/contact" size="sm" client:load>
+            <Button href="/contact" size="sm" baseUrl={baseUrl} client:load>
               Support Us
             </Button>
           </Card>
@@ -66,7 +68,7 @@ import Button from '../components/Button.vue';
             <p class="text-charcoal/80 mb-4">
               Collaborate on training, research, or community development initiatives.
             </p>
-            <Button href="/contact" size="sm" client:load>
+            <Button href="/contact" size="sm" baseUrl={baseUrl} client:load>
               Partnership Inquiry
             </Button>
           </Card>
@@ -76,7 +78,7 @@ import Button from '../components/Button.vue';
             <p class="text-charcoal/80 mb-4">
               Stay informed about our progress, programs, and opportunities.
             </p>
-            <Button href="/contact" size="sm" client:load>
+            <Button href="/contact" size="sm" baseUrl={baseUrl} client:load>
               Subscribe
             </Button>
           </Card>
@@ -84,7 +86,7 @@ import Button from '../components/Button.vue';
 
         <div class="text-center">
           <p class="text-lg mb-4">Ready to take the next step?</p>
-          <Button href="/contact" variant="secondary" client:load>
+          <Button href="/contact" variant="secondary" baseUrl={baseUrl} client:load>
             Contact Us Today
           </Button>
         </div>
