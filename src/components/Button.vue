@@ -36,7 +36,7 @@ const fullHref = computed(() => {
   }
   // For internal links, prepend baseUrl
   const path = props.href.startsWith('/') ? props.href.slice(1) : props.href;
-  return `${props.baseUrl}${path}`;
+  return `${props.baseUrl}/${path}`;
 });
 
 const buttonClasses = computed(() => {

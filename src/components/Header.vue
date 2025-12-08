@@ -80,10 +80,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const navLinks = computed(() => [
   { label: 'Home', href: `${props.baseUrl}` },
-  { label: 'About', href: `${props.baseUrl}about` },
-  { label: 'Projects', href: `${props.baseUrl}projects` },
-  { label: 'Contact', href: `${props.baseUrl}contact` },
-  { label: 'Get Involved', href: `${props.baseUrl}get-involved` }
+  { label: 'About', href: `${props.baseUrl}/about` },
+  { label: 'Projects', href: `${props.baseUrl}/projects` },
+  { label: 'Contact', href: `${props.baseUrl}/contact` },
+  { label: 'Get Involved', href: `${props.baseUrl}/get-involved` }
 ]);
 
 const isMenuOpen = ref(false);
