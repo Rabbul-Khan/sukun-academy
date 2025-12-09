@@ -4,6 +4,38 @@ import Card from '../components/Card.vue';
 import Button from '../components/Button.vue';
 
 const baseUrl = import.meta.env.BASE_URL;
+
+// Involvement options data
+const involvementOptions = [
+  {
+    icon: 'volunteer',
+    title: 'Volunteer',
+    description: 'Join us on the ground to learn, contribute, and be part of the regenerative movement.',
+  },
+  {
+    icon: 'donate',
+    title: 'Donate / Waqf',
+    description: 'Support land acquisition, infrastructure, and programs through charitable giving.',
+  },
+  {
+    icon: 'partner',
+    title: 'Partner With Us',
+    description: 'Collaborate on training, research, or community development initiatives.',
+  },
+  {
+    icon: 'updates',
+    title: 'Join Updates',
+    description: 'Stay informed about our progress, programs, and opportunities.',
+  },
+];
+
+// SVG icon paths
+const involvementIcons = {
+  volunteer: 'M80-40v-80h800v80H80Zm80-120v-240q-33-54-51-114.5T91-638q0-61 15.5-120T143-874q8-21 26-33.5t40-12.5q31 0 53 21t18 50l-11 91q-6 48 8.5 91t43.5 75.5q29 32.5 70 52t89 19.5q60 0 120.5 12.5T706-472q45 23 69.5 58.5T800-326v166H160Zm80-80h480v-86q0-24-12-42.5T674-398q-41-20-95-31t-99-11q-66 0-122.5-27t-96-72.5Q222-585 202-644.5T190-768q-10 30-14.5 64t-4.5 66q0 58 20.5 111.5T240-422v182Zm240-320q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-720q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720q0 33 23.5 56.5T480-640ZM320-160v-37q0-67 46.5-115T480-360h160v80H480q-34 0-57 24.5T400-197v37h-80Zm160-80Zm0-480Z',
+  donate: 'm480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z',
+  partner: 'M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z',
+  updates: 'M480-480Zm0-40 320-200H160l320 200ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v280h-80v-200L480-440 160-640v400h360v80H160ZM715-42l-70-40 46-78h-91v-80h91l-46-78 70-40 45 78 45-78 70 40-46 78h91v80h-91l46 78-70 40-45-78-45 78Z',
+};
 ---
 
 <Layout 
@@ -22,53 +54,19 @@ const baseUrl = import.meta.env.BASE_URL;
       
         <h3 class="mb-4">Ways to connect</h3>
         <div class="grid sm:grid-cols-2 gap-6 mb-12">
-          <Card client:load>
-            <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true"><path d="M80-40v-80h800v80H80Zm80-120v-240q-33-54-51-114.5T91-638q0-61 15.5-120T143-874q8-21 26-33.5t40-12.5q31 0 53 21t18 50l-11 91q-6 48 8.5 91t43.5 75.5q29 32.5 70 52t89 19.5q60 0 120.5 12.5T706-472q45 23 69.5 58.5T800-326v166H160Zm80-80h480v-86q0-24-12-42.5T674-398q-41-20-95-31t-99-11q-66 0-122.5-27t-96-72.5Q222-585 202-644.5T190-768q-10 30-14.5 64t-4.5 66q0 58 20.5 111.5T240-422v182Zm240-320q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-720q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720q0 33 23.5 56.5T480-640ZM320-160v-37q0-67 46.5-115T480-360h160v80H480q-34 0-57 24.5T400-197v37h-80Zm160-80Zm0-480Z"/></svg>
-              </span>
-              <span>Volunteer</span>
-            </h3>
-            <p class="text-charcoal/80 mb-4">
-              Join us on the ground to learn, contribute, and be part of the regenerative movement.
-            </p>
-          </Card>
-
-          <Card client:load>
-            <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
-              </span>
-              <span>Donate / Waqf</span>
-            </h3>
-            <p class="text-charcoal/80 mb-4">
-              Support land acquisition, infrastructure, and programs through charitable giving.
-            </p>
-          </Card>
-
-          <Card client:load>
-            <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true"><path d="M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z"/></svg>
-              </span>
-              <span>Partner With Us</span>
-            </h3>
-            <p class="text-charcoal/80 mb-4">
-              Collaborate on training, research, or community development initiatives.
-            </p>
-          </Card>
-
-          <Card client:load>
-            <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true"><path d="M480-480Zm0-40 320-200H160l320 200ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v280h-80v-200L480-440 160-640v400h360v80H160ZM715-42l-70-40 46-78h-91v-80h91l-46-78 70-40 45 78 45-78 70 40-46 78h91v80h-91l46 78-70 40-45-78-45 78Z"/></svg>
-              </span>
-              <span>Join Updates</span>
-            </h3>
-            <p class="text-charcoal/80 mb-4">
-              Stay informed about our progress, programs, and opportunities.
-            </p>
-          </Card>
+          {involvementOptions.map((option) => (
+            <Card client:load>
+              <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
+                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true">
+                    <path d={involvementIcons[option.icon]} />
+                  </svg>
+                </span>
+                <span>{option.title}</span>
+              </h3>
+              <p class="text-charcoal/80 mb-4">{option.description}</p>
+            </Card>
+          ))}
         </div>
 
         <section class="mt-16 rounded-3xl bg-card-bg px-8 py-12 text-center shadow-card">

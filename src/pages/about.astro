@@ -1,6 +1,72 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.vue';
+
+// Living System locations data
+const livingSystemLocations = [
+  {
+    emoji: '🏫',
+    title: 'Sukun Academy (7 acres)',
+    description: 'The learning and design hub',
+    status: 'planned',
+  },
+  {
+    emoji: '🏘️',
+    title: 'Al Fajr Ecovillage (32 acres)',
+    description: 'The living community and production sanctuary',
+    status: 'planned',
+  },
+];
+
+const partnerLocation = {
+  emoji: '🌾',
+  title: 'Darul Hayah Regenerative Farm (15 acres, Gulni, Sylhet)',
+  description: 'Now entering early implementation.',
+};
+
+// Four Pillars data
+const fourPillars = [
+  {
+    icon: 'knowledge',
+    title: 'ʿIlm — Knowledge',
+    subtitle: 'Learning & Applied Wisdom',
+    description: "Cultivating Qur'anic living, ecological literacy, and applied understanding so regeneration starts in the heart and moves into the land.",
+  },
+  {
+    icon: 'skills',
+    title: 'Mahārāt — Skills',
+    subtitle: 'Practical Abilities',
+    description: 'Hands-on training in permaculture, natural farming, natural building, traditional crafts, and service leadership.',
+  },
+  {
+    icon: 'economy',
+    title: 'Awqāf — Economy',
+    subtitle: 'Sacred Commons & Ethical Livelihoods',
+    description: 'Building a just cooperative economy where land and core assets are held in <strong>waqf — sacred commons</strong>, enabling shared prosperity and long-term ecological protection.',
+  },
+  {
+    icon: 'community',
+    title: 'Jamāʿah — Community',
+    subtitle: 'Cooperative Network',
+    description: 'A nurturing, <strong>Shūrā-guided (consultative ecological leadership)</strong> community culture rooted in worship, mutual support, inclusion, and care for the vulnerable.',
+  },
+];
+
+// Team strengths
+const teamStrengths = [
+  'Permaculture-trained members (PDC/PTT graduates)',
+  'Experience in NGOs, community organizing, administration, ethical livelihoods',
+  'Religious and cultural guidance grounding the work',
+  'Youth volunteers being trained for future leadership',
+];
+
+// SVG icon paths for pillars
+const pillarIcons = {
+  knowledge: 'M260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z',
+  skills: 'M754-81q-8 0-15-2.5T726-92L522-296q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l85-85q6-6 13-8.5t15-2.5q8 0 15 2.5t13 8.5l204 204q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13l-85 85q-6 6-13 8.5T754-81Zm0-95 29-29-147-147-29 29 147 147ZM205-80q-8 0-15.5-3T176-92l-84-84q-6-6-9-13.5T80-205q0-8 3-15t9-13l212-212h85l34-34-165-165h-57L80-765l113-113 121 121v57l165 165 116-116-43-43 56-56H495l-28-28 142-142 28 28v113l56-56 142 142q17 17 26 38.5t9 45.5q0 24-9 46t-26 39l-85-85-56 56-42-42-207 207v84L233-92q-6 6-13 9t-15 3Zm0-96 170-170v-29h-29L176-205l29 29Zm0 0-29-29 15 14 14 15Zm549 0 29-29-29 29Z',
+  economy: 'M40-120v-491q-18-11-29-28.5T0-680q0-23 24-56t56-64q32 31 56 64t24 56q0 23-11 40.5T120-611v171h80v-80q0-25 16-48t46-30q-11-17-16.5-37t-5.5-41q0-40 19-74t51-56l170-114 170 114q32 22 51 56t19 74q0 21-5.5 41T698-598q30 7 46 30t16 48v80h80v-171q-18-11-29-28.5T800-680q0-23 24-56t56-64q32 31 56 64t24 56q0 23-11 40.5T920-611v491H520v-160q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280v160H40Zm356-480h168q32 0 54-22t22-54q0-20-9-36.5T606-740l-126-84-126 84q-16 11-25 27.5t-9 36.5q0 32 22 54t54 22ZM120-200h240v-80q0-50 35-85t85-35q50 0 85 35t35 85v80h240v-160H680v-160H280v160H120v160Zm360-320Zm0-80Zm0 2Z',
+  community: 'M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Zm520-546Z',
+};
 ---
 
 <Layout 
@@ -11,7 +77,7 @@ import Card from '../components/Card.vue';
   <section >
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h1 class="mb-8">About Sukun Regenerative Culture</h1>
+        <h1 class="mb-8 mt-12">About Sukun Regenerative Culture</h1>
 
         <p class="text-lg mb-6 leading-relaxed">
           Sukun Regenerative Culture is the heart and philosophy of the Sukun ecosystem —
@@ -37,37 +103,28 @@ import Card from '../components/Card.vue';
         <div class="space-y-4 mb-6">
           <Card client:load>
             <h2 class="mb-6">One Living System in Kulaura, Sylhet</h2>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl">🏫</span>
-              <div>
-                <h3 class="mb-2">Sukun Academy (7 acres)</h3>
-                <p class="text-charcoal/80">
-                  The learning and design hub <em class="text-charcoal/60">(planned)</em>
-                </p>
+            {livingSystemLocations.map((location) => (
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">{location.emoji}</span>
+                <div>
+                  <h3 class="mb-2">{location.title}</h3>
+                  <p class="text-charcoal/80">
+                    {location.description} <em class="text-charcoal/60">(planned)</em>
+                  </p>
+                </div>
               </div>
-            </div>
-             <div class="flex items-start gap-4">
-              <span class="text-3xl">🏘️</span>
-              <div>
-                <h3 class="mb-2">Al Fajr Ecovillage (32 acres)</h3>
-                <p class="text-charcoal/80">
-                  The living community and production sanctuary <em class="text-charcoal/60">(planned)</em>
-                </p>
-              </div>
-            </div>
+            ))}
             <p class="text-lg mb-6 leading-relaxed">
               Together they form a <strong>39-acre regenerative ecosystem</strong> rooted in faith, ecology, and cooperation.
             </p>
 
             <p class="font-semibold mb-4">And through partnership:</p>
 
-          <div class="flex items-start gap-4">
-              <span class="text-3xl">🌾</span>
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">{partnerLocation.emoji}</span>
               <div>
-                <h3 class="mb-2">Darul Hayah Regenerative Farm (15 acres, Gulni, Sylhet)</h3>
-                <p class="text-charcoal/80">
-                  Now entering early implementation.
-                </p>
+                <h3 class="mb-2">{partnerLocation.title}</h3>
+                <p class="text-charcoal/80">{partnerLocation.description}</p>
               </div>
             </div>
           </Card>
@@ -79,65 +136,24 @@ import Card from '../components/Card.vue';
   <!-- The Four Pillars -->
   <section>
     <div class="container-custom">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-4xl mx-auto">
         <h2 class="mb-12 text-center">The Four Pillars of Sukun</h2>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <Card client:load>
-            <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true"><path d="M260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z"/></svg>
-              </span>
-              <span>ʿIlm — Knowledge</span>
-            </h3>
-            <p class="text-sm text-charcoal/70 mb-2 font-semibold">Learning & Applied Wisdom</p>
-            <p class="text-charcoal/80">
-              Cultivating Qur'anic living, ecological literacy, and applied understanding so regeneration 
-              starts in the heart and moves into the land.
-            </p>
-          </Card>
-
-          <Card client:load>
-            <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true"><path d="M754-81q-8 0-15-2.5T726-92L522-296q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l85-85q6-6 13-8.5t15-2.5q8 0 15 2.5t13 8.5l204 204q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13l-85 85q-6 6-13 8.5T754-81Zm0-95 29-29-147-147-29 29 147 147ZM205-80q-8 0-15.5-3T176-92l-84-84q-6-6-9-13.5T80-205q0-8 3-15t9-13l212-212h85l34-34-165-165h-57L80-765l113-113 121 121v57l165 165 116-116-43-43 56-56H495l-28-28 142-142 28 28v113l56-56 142 142q17 17 26 38.5t9 45.5q0 24-9 46t-26 39l-85-85-56 56-42-42-207 207v84L233-92q-6 6-13 9t-15 3Zm0-96 170-170v-29h-29L176-205l29 29Zm0 0-29-29 15 14 14 15Zm549 0 29-29-29 29Z"/></svg>
-              </span>
-              <span>Mahārāt — Skills</span>
-            </h3>
-            <p class="text-sm text-charcoal/70 mb-2 font-semibold">Practical Abilities</p>
-            <p class="text-charcoal/80">
-              Hands-on training in permaculture, natural farming, natural building, traditional crafts, 
-              and service leadership.
-            </p>
-          </Card>
-
-          <Card client:load>
-            <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true"><path d="M40-120v-491q-18-11-29-28.5T0-680q0-23 24-56t56-64q32 31 56 64t24 56q0 23-11 40.5T120-611v171h80v-80q0-25 16-48t46-30q-11-17-16.5-37t-5.5-41q0-40 19-74t51-56l170-114 170 114q32 22 51 56t19 74q0 21-5.5 41T698-598q30 7 46 30t16 48v80h80v-171q-18-11-29-28.5T800-680q0-23 24-56t56-64q32 31 56 64t24 56q0 23-11 40.5T920-611v491H520v-160q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280v160H40Zm356-480h168q32 0 54-22t22-54q0-20-9-36.5T606-740l-126-84-126 84q-16 11-25 27.5t-9 36.5q0 32 22 54t54 22ZM120-200h240v-80q0-50 35-85t85-35q50 0 85 35t35 85v80h240v-160H680v-160H280v160H120v160Zm360-320Zm0-80Zm0 2Z"/></svg>
-              </span>
-              <span>Awqāf — Economy</span>
-            </h3>
-            <p class="text-sm text-charcoal/70 mb-2 font-semibold">Sacred Commons & Ethical Livelihoods</p>
-            <p class="text-charcoal/80">
-              Building a just cooperative economy where land and core assets are held in 
-              <strong>waqf — sacred commons</strong>, enabling shared prosperity and long-term ecological protection.
-            </p>
-          </Card>
-
-          <Card client:load>
-            <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true"><path d="M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Zm520-546Z"/></svg>
-              </span>
-              <span>Jamāʿah — Community</span>
-            </h3>
-            <p class="text-sm text-charcoal/70 mb-2 font-semibold">Cooperative Network</p>
-            <p class="text-charcoal/80">
-              A nurturing, <strong>Shūrā-guided (consultative ecological leadership)</strong> community culture 
-              rooted in worship, mutual support, inclusion, and care for the vulnerable.
-            </p>
-          </Card>
+          {fourPillars.map((pillar) => (
+            <Card client:load>
+              <h3 class="mb-3 flex items-center gap-3 font-medium text-dark-moss">
+                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-evergreen/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="h-7 w-7 text-evergreen" fill="currentColor" aria-hidden="true">
+                    <path d={pillarIcons[pillar.icon]} />
+                  </svg>
+                </span>
+                <span>{pillar.title}</span>
+              </h3>
+              <p class="text-sm text-charcoal/70 mb-2 font-semibold">{pillar.subtitle}</p>
+              <p class="text-charcoal/80" set:html={pillar.description} />
+            </Card>
+          ))}
         </div>
       </div>
     </div>
@@ -158,22 +174,12 @@ import Card from '../components/Card.vue';
         <Card client:load>
           <h3 class="mb-4">Our team brings a mix of strengths:</h3>
           <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">✓</span>
-              <span>Permaculture-trained members (PDC/PTT graduates)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">✓</span>
-              <span>Experience in NGOs, community organizing, administration, ethical livelihoods</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">✓</span>
-              <span>Religious and cultural guidance grounding the work</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">✓</span>
-              <span>Youth volunteers being trained for future leadership</span>
-            </li>
+            {teamStrengths.map((strength) => (
+              <li class="flex items-start gap-3">
+                <span class="text-evergreen text-xl">✓</span>
+                <span>{strength}</span>
+              </li>
+            ))}
           </ul>
         </Card>
 
