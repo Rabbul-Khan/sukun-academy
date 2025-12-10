@@ -7,17 +7,19 @@
   </span>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { computed } from 'vue';
 
-interface Props {
-  variant?: 'default' | 'success' | 'info';
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  variant: 'default',
+// Props with defaults
+const props = defineProps({
+  variant: {
+    type: String,
+    default: 'default',
+    validator: (value) => ['default', 'success', 'info'].includes(value),
+  },
 });
 
+// Variant class mappings
 const variantClasses = computed(() => {
   const variants = {
     default: 'bg-sage-mist text-evergreen',

@@ -7,6 +7,21 @@ import Card from '../../components/Card.vue';
 import alFajrImage from '../../assets/images/al fajr eco village.jpeg';
 
 const baseUrl = import.meta.env.BASE_URL;
+
+// Features data
+const features = [
+  { emoji: '🕌', text: 'Eco-mosque and nature-based madrasa' },
+  { emoji: '🌳', text: 'Food forests, community gardens, and water harvesting' },
+  { emoji: '🏡', text: 'Natural homes, renewable energy, and shared facilities' },
+  { emoji: '💚', text: 'Holistic wellness and community care spaces' },
+];
+
+// Action buttons
+const actionButtons = [
+  { href: '/get-involved', variant: 'primary', text: 'Join the Vision' },
+  { href: '/get-involved', variant: 'secondary', text: 'Support Land Waqf' },
+  { href: '/contact', variant: 'secondary', text: 'Partner for Development' },
+];
 ---
 
 <Layout 
@@ -43,22 +58,12 @@ const baseUrl = import.meta.env.BASE_URL;
         <Card client:load className="mb-8">
           <h3 class="mb-4">Future features envisioned</h3>
           <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">🕌</span>
-              <span>Eco-mosque and nature-based madrasa</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">🌳</span>
-              <span>Food forests, community gardens, and water harvesting</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">🏡</span>
-              <span>Natural homes, renewable energy, and shared facilities</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">💚</span>
-              <span>Holistic wellness and community care spaces</span>
-            </li>
+            {features.map((feature) => (
+              <li class="flex items-start gap-3">
+                <span class="text-evergreen text-xl">{feature.emoji}</span>
+                <span>{feature.text}</span>
+              </li>
+            ))}
           </ul>
         </Card>
 
@@ -72,15 +77,16 @@ const baseUrl = import.meta.env.BASE_URL;
         </Card>
 
         <div class="flex flex-wrap gap-3">
-          <Button href="/get-involved" baseUrl={baseUrl} client:load>
-            Join the Vision
-          </Button>
-          <Button href="/get-involved" variant="secondary" baseUrl={baseUrl} client:load>
-            Support Land Waqf
-          </Button>
-          <Button href="/contact" variant="secondary" baseUrl={baseUrl} client:load>
-            Partner for Development
-          </Button>
+          {actionButtons.map((button) => (
+            <Button 
+              href={button.href} 
+              variant={button.variant === 'primary' ? undefined : button.variant}
+              baseUrl={baseUrl} 
+              client:load
+            >
+              {button.text}
+            </Button>
+          ))}
         </div>
       </div>
     </div>

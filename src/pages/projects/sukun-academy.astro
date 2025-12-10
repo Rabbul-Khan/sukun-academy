@@ -7,6 +7,21 @@ import Card from '../../components/Card.vue';
 import sukunAcademyImage from '../../assets/images/sukun academy bangladesh wide.png';
 
 const baseUrl = import.meta.env.BASE_URL;
+
+// Focus areas data
+const focusAreas = [
+  { emoji: '🎓', text: 'Permaculture learning and design certification' },
+  { emoji: '🌾', text: 'Regenerative agriculture and soil restoration training' },
+  { emoji: '🏗️', text: 'Natural building and appropriate technology' },
+  { emoji: '🌟', text: 'Youth education, retreats, and volunteer exchange' },
+];
+
+// Action buttons
+const actionButtons = [
+  { href: '/get-involved', variant: 'primary', text: 'Apply for Courses' },
+  { href: '/contact', variant: 'secondary', text: 'Host a Training' },
+  { href: '/get-involved', variant: 'secondary', text: 'Volunteer / Work-Study' },
+];
 ---
 
 <Layout 
@@ -40,22 +55,12 @@ const baseUrl = import.meta.env.BASE_URL;
         <Card client:load className="mb-8">
           <h3 class="mb-4">Future focus areas</h3>
           <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">🎓</span>
-              <span>Permaculture learning and design certification</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">🌾</span>
-              <span>Regenerative agriculture and soil restoration training</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">🏗️</span>
-              <span>Natural building and appropriate technology</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-evergreen text-xl">🌟</span>
-              <span>Youth education, retreats, and volunteer exchange</span>
-            </li>
+            {focusAreas.map((area) => (
+              <li class="flex items-start gap-3">
+                <span class="text-evergreen text-xl">{area.emoji}</span>
+                <span>{area.text}</span>
+              </li>
+            ))}
           </ul>
         </Card>
 
@@ -70,15 +75,16 @@ const baseUrl = import.meta.env.BASE_URL;
         </Card>
 
         <div class="flex flex-wrap gap-3">
-          <Button href="/get-involved" baseUrl={baseUrl} client:load>
-            Apply for Courses
-          </Button>
-          <Button href="/contact" variant="secondary" baseUrl={baseUrl} client:load>
-            Host a Training
-          </Button>
-          <Button href="/get-involved" variant="secondary" baseUrl={baseUrl} client:load>
-            Volunteer / Work-Study
-          </Button>
+          {actionButtons.map((button) => (
+            <Button 
+              href={button.href} 
+              variant={button.variant === 'primary' ? undefined : button.variant}
+              baseUrl={baseUrl} 
+              client:load
+            >
+              {button.text}
+            </Button>
+          ))}
         </div>
       </div>
     </div>

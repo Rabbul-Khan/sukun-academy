@@ -1,27 +1,50 @@
+/* ==========================================================================
+   Global Styles - Sukun Regenerative Culture
+   ========================================================================== */
+
 @import "tailwindcss";
 
+/* ==========================================================================
+   Theme Configuration (Tailwind v4)
+   ========================================================================== */
+
 @theme {
+  /* Primary Colors */
   --color-evergreen: #1B4332;
   --color-evergreen-dark: #123021;
   --color-evergreen-light: #2A5C49;
+
+  /* Accent Colors */
   --color-living-soil: #BC6C25;
+  --color-living-soil-dark: #A55E1F;
   --color-living-soil-light: #D27F35;
+
+  /* Neutral Colors */
   --color-sage-mist: #D8F3DC;
   --color-mist: #E9EFE6;
   --color-warm-paper: #F7F5F0;
+  --color-card-bg: #FFFFFF;
+
+  /* Text Colors */
   --color-charcoal: #2D312F;
   --color-dark-moss: #081C15;
   --color-stone: #6B7280;
-  --color-card-bg: #FFFFFF;
+
+  /* Semantic Colors */
   --color-burnt-clay: #D64045;
 
+  /* Shadows */
   --shadow-card: 0 4px 12px rgba(27, 67, 50, 0.08);
   --shadow-card-hover: 0 8px 24px rgba(27, 67, 50, 0.12);
   --shadow-button: 0 8px 24px rgba(27, 67, 50, 0.12);
 }
 
+/* ==========================================================================
+   CSS Custom Properties (Design Tokens)
+   ========================================================================== */
+
 :root {
-  /* Color aliases */
+  /* Color Aliases - Semantic mapping for easier theming */
   --color-primary: var(--color-evergreen);
   --color-secondary: var(--color-living-soil);
   --color-accent: var(--color-sage-mist);
@@ -37,17 +60,18 @@
   --font-heading: 'Lora', serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Spacing */
-  --space-xs: 4px;
-  --space-s: 8px;
-  --space-m: 16px;
-  --space-l: 32px;
-  --space-xl: 64px;
-  --space-xxl: 128px;
+  /* Spacing Scale */
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 4rem;     /* 64px */
+  --space-2xl: 8rem;    /* 128px */
 
-  /* Radii */
-  --radius-sm: 8px;
-  --radius-md: 12px;
+  /* Border Radius */
+  --radius-sm: 0.5rem;  /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem;    /* 16px */
   --radius-full: 999px;
 
   /* Shadows */
@@ -55,7 +79,12 @@
   --shadow-md: 0 8px 24px rgba(27, 67, 50, 0.12);
 }
 
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
 @layer base {
+  /* Document */
   html {
     @apply scroll-smooth;
   }
@@ -66,15 +95,11 @@
     line-height: 1.6;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    @apply text-dark-moss;
     line-height: 1.25;
+    @apply text-dark-moss;
   }
 
   h1 {
@@ -86,13 +111,14 @@
   }
 
   h3 {
-    @apply text-2xl md:text-[29px] font-normal;
+    @apply text-2xl md:text-[1.8125rem] font-normal;
   }
 
   h4 {
     @apply text-xl font-normal;
   }
 
+  /* Body Elements */
   p {
     @apply mb-4 text-base;
   }
@@ -109,8 +135,8 @@
     @apply italic;
   }
 
-  ul,
-  ol {
+  /* Lists */
+  ul, ol {
     @apply mb-4;
   }
 
@@ -119,29 +145,39 @@
   }
 }
 
+/* ==========================================================================
+   Component Styles
+   ========================================================================== */
+
 @layer components {
-  /* Container utility */
+  /* Container */
   .container-custom {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Section spacing */
+  /* Section Spacing */
   .section-padding {
     @apply py-16 md:py-20 lg:py-24;
   }
 
-  /* Focus visible styles for accessibility */
+  /* Accessibility - Focus States */
   *:focus-visible {
     @apply outline-none ring-2 ring-evergreen ring-offset-2 ring-offset-warm-paper;
   }
 }
 
-/* Custom animations */
+/* ==========================================================================
+   Utility Styles
+   ========================================================================== */
+
 @layer utilities {
+  /* Scroll Animation */
   .animate-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(1.25rem);
+    transition: 
+      opacity 0.6s ease-out, 
+      transform 0.6s ease-out;
   }
 
   .animate-on-scroll.visible {

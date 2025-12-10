@@ -10,24 +10,37 @@
   </component>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { computed } from 'vue';
 
-interface Props {
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
-  href?: string;
-  type?: 'button' | 'submit' | 'reset';
-  baseUrl?: string;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  variant: 'primary',
-  size: 'md',
-  type: 'button',
-  baseUrl: '/'
+// Props with defaults and validators
+const props = defineProps({
+  variant: {
+    type: String,
+    default: 'primary',
+    validator: (value) => ['primary', 'secondary', 'outline'].includes(value),
+  },
+  size: {
+    type: String,
+    default: 'md',
+    validator: (value) => ['sm', 'md', 'lg'].includes(value),
+  },
+  href: {
+    type: String,
+    default: undefined,
+  },
+  type: {
+    type: String,
+    default: 'button',
+    validator: (value) => ['button', 'submit', 'reset'].includes(value),
+  },
+  baseUrl: {
+    type: String,
+    default: '/',
+  },
 });
 
+// Compute full href for internal/external links
 const fullHref = computed(() => {
   if (!props.href) return undefined;
   // If it's an external link or already has base, return as is
@@ -39,6 +52,7 @@ const fullHref = computed(() => {
   return `${props.baseUrl}/${path}`;
 });
 
+// Variant and size class mappings
 const buttonClasses = computed(() => {
   const variants = {
     primary: 'bg-living-soil text-white shadow-button hover:bg-living-soil-dark hover:shadow-card-hover hover:-translate-y-0.5 focus:ring-living-soil focus:ring-offset-warm-paper',

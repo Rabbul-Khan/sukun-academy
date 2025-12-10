@@ -59,17 +59,18 @@
   </footer>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { computed } from 'vue';
 
-interface Props {
-  baseUrl?: string;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  baseUrl: '/'
+// Props with defaults
+const props = defineProps({
+  baseUrl: {
+    type: String,
+    default: '/',
+  },
 });
 
+// Navigation links data
 const quickLinks = computed(() => [
   { label: 'Home', href: props.baseUrl },
   { label: 'About', href: `${props.baseUrl}about` },

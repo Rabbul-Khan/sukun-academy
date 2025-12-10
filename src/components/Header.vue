@@ -67,17 +67,18 @@
   </nav>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref, computed } from 'vue';
 
-interface Props {
-  baseUrl?: string;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  baseUrl: '/'
+// Props with defaults
+const props = defineProps({
+  baseUrl: {
+    type: String,
+    default: '/',
+  },
 });
 
+// Navigation links data
 const navLinks = computed(() => [
   { label: 'Home', href: `${props.baseUrl}` },
   { label: 'About', href: `${props.baseUrl}/about` },
@@ -86,6 +87,7 @@ const navLinks = computed(() => [
   { label: 'Get Involved', href: `${props.baseUrl}/get-involved` }
 ]);
 
+// Mobile menu state
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {

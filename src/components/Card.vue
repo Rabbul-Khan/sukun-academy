@@ -7,12 +7,12 @@
   </div>
 </template>
 
-<script setup lang="ts">
-interface Props {
-  className?: string;
-}
-
-withDefaults(defineProps<Props>(), {
-  className: '',
+<script setup>
+// Props with defaults
+defineProps({
+  className: {
+    type: String,
+    default: '',
+  },
 });
 </script>
