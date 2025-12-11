@@ -10,10 +10,10 @@ const baseUrl = import.meta.env.BASE_URL;
 
 // Focus areas data
 const focusAreas = [
-  { emoji: '🎓', text: 'Permaculture learning and design certification' },
-  { emoji: '🌾', text: 'Regenerative agriculture and soil restoration training' },
-  { emoji: '🏗️', text: 'Natural building and appropriate technology' },
-  { emoji: '🌟', text: 'Youth education, retreats, and volunteer exchange' },
+  { text: 'Permaculture learning and design certification' },
+  { text: 'Regenerative agriculture and soil restoration training' },
+  { text: 'Natural building and appropriate technology' },
+  { text: 'Youth education, retreats, and volunteer exchange' },
 ];
 
 // Action buttons
@@ -57,7 +57,7 @@ const actionButtons = [
           <ul class="space-y-3">
             {focusAreas.map((area) => (
               <li class="flex items-start gap-3">
-                <span class="text-evergreen text-xl">{area.emoji}</span>
+                <span class="text-evergreen text-xl">✓</span>
                 <span>{area.text}</span>
               </li>
             ))}

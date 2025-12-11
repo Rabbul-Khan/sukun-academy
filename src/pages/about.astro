@@ -5,13 +5,13 @@ import Card from '../components/Card.vue';
 // Living System locations data
 const livingSystemLocations = [
   {
-    emoji: '🏫',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" height="24" fill="currentColor"><path d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z"/></svg>',
     title: 'Sukun Academy (7 acres)',
     description: 'The learning and design hub',
     status: 'planned',
   },
   {
-    emoji: '🏘️',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" height="24" fill="currentColor"><path d="M80-160v-400l240-240 240 240v400H80Zm80-80h120v-120h80v120h120v-287L320-687 160-527v287Zm120-200v-80h80v80h-80Zm360 280v-433L433-800h113l174 174v466h-80Zm160 0v-499L659-800h113l108 108v532h-80Zm-640-80h320-320Z"/></svg>',
     title: 'Al Fajr Ecovillage (32 acres)',
     description: 'The living community and production sanctuary',
     status: 'planned',
@@ -19,7 +19,7 @@ const livingSystemLocations = [
 ];
 
 const partnerLocation = {
-  emoji: '🌾',
+  icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" height="24" fill="currentColor"><path d="M80-160v-80h230q-22-85-83.5-146.5T80-470q20-5 39.5-7.5T160-480q134 0 227 93t93 227H80Zm480 0q0-42-9-83.5T525-323q42-71 114.5-114T800-480q21 0 40.5 2.5T880-470q-85 22-146 83.5T650-240h230v80H560Zm-80-239q0-65 24-122t66-100.5q42-43.5 98.5-69.5T789-719q-56 35-98 86t-65 114q-44 21-80.5 51.5T480-399Zm-73-75q-12-9-24-17t-25-16q0-6 1-12.5t1-12.5q0-76-24-144t-68-124q66 27 114.5 77.5T457-606q-18 30-31 63.5T407-474Z"/></svg>',
   title: 'Darul Hayah Regenerative Farm (15 acres, Gulni, Sylhet)',
   description: 'Now entering early implementation.',
 };
@@ -105,7 +105,7 @@ const pillarIcons = {
             <h2 class="mb-6">One Living System in Kulaura, Sylhet</h2>
             {livingSystemLocations.map((location) => (
               <div class="flex items-start gap-4">
-                <span class="text-3xl">{location.emoji}</span>
+                <span class="flex items-center justify-center rounded-full bg-evergreen/10 w-12 h-12 flex-shrink-0 text-evergreen" set:html={location.icon} />
                 <div>
                   <h3 class="mb-2">{location.title}</h3>
                   <p class="text-charcoal/80">
@@ -121,7 +121,7 @@ const pillarIcons = {
             <p class="font-semibold mb-4">And through partnership:</p>
 
             <div class="flex items-start gap-4">
-              <span class="text-3xl">{partnerLocation.emoji}</span>
+              <span class="flex items-center justify-center rounded-full bg-evergreen/10 w-12 h-12 flex-shrink-0 text-evergreen" set:html={partnerLocation.icon} />
               <div>
                 <h3 class="mb-2">{partnerLocation.title}</h3>
                 <p class="text-charcoal/80">{partnerLocation.description}</p>
